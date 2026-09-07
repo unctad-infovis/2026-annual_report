@@ -1,0 +1,36 @@
+#app-root-2026-annual_report :where(.annual-report-app) :is(a, button, input, [tabindex]):focus-visible {
+  outline: 3px solid #004987;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px #fff;
+}
+
+#app-root-2026-annual_report .annual-report-app .ar-gt:focus-visible {
+  outline-offset: -4px;
+  box-shadow: none;
+}
+
+#app-root-2026-annual_report .annual-report-app .ar-skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 12px 18px;
+  background: #fff;
+  color: #004987;
+  transform: translateY(-200%);
+}
+
+#app-root-2026-annual_report .annual-report-app .ar-skip-link:focus {
+  transform: none;
+}
+
+#app-root-2026-annual_report .annual-report-app .ar-rv:focus-within {
+  opacity: 1;
+  transform: none;
+}
+
+@media (forced-colors: active) {
+  #app-root-2026-annual_report .annual-report-app :is(a, button, input, [tabindex]):focus-visible {
+    outline-color: Highlight;
+  }
+}

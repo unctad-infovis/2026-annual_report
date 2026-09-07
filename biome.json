@@ -1,0 +1,24 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.11/schema.json",
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "src/**",
+      "!src/assets",
+      "scripts/**",
+      "public/assets/font/*.css",
+      "public/demo.css",
+      "*.json",
+      "*.js",
+      "!package-lock.json"
+    ],
+    "maxSize": 2000000
+  },
+  "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 140 },
+  "linter": { "enabled": true, "rules": { "preset": "recommended" } },
+  "javascript": {
+    "formatter": { "arrowParentheses": "asNeeded", "quoteStyle": "single", "jsxQuoteStyle": "double", "trailingCommas": "all" }
+  },
+  "css": { "formatter": { "quoteStyle": "single" } },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } }
+}

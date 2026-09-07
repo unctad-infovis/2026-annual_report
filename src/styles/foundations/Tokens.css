@@ -1,0 +1,36 @@
+#app-root-2026-annual_report .annual-report-app {
+  --un-blue: #009edb;
+  --un-blue-dark: #004987;
+  --un-blue-mid: #0077b8;
+  --un-blue-aaa: #005392;
+  --un-yellow-dv: #fbaf17;
+  --un-yellow: #ffc800;
+  --warm-grey: #aea29a;
+  --muted-text: #6b625c;
+  --dv-purple: #a05fb4;
+  --dv-green: #72bf44;
+  --dv-red: #ed1847;
+  --dv-orange: #f58220;
+  --ramp-blue-1: #004987;
+  --ramp-blue-2: #0077b8;
+  --ramp-blue-3: #009edb;
+  --ramp-blue-4: #7bb7e1;
+  --ramp-blue-5: #c5dfef;
+  --ramp-blue-6: #e3edf6;
+  --ink: #231f20;
+  --ink-80: #4a4748;
+  --bg: #ffffff;
+  --bg-pale: #f3f8fd;
+  --bg-shade: #ebeae6;
+  --line: #d9e2ec;
+  --topbar-grey: #f2f2f2;
+  --nav-grey: #4d4d4d;
+  --grey-text: #7c7067;
+  --blue-tint: #c5dfef;
+  --blue-darktext: #005392;
+  --footer-bg: #363636;
+  --footer-input: #797978;
+  --font: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --maxw: 1346px;
+  --arrow: 40px;
+}

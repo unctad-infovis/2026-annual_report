@@ -1,0 +1,50 @@
+#app-root-2026-annual_report .ar-container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+#app-root-2026-annual_report .ar-icon-arrow {
+  display: inline-block;
+  width: var(--arrow);
+  height: var(--arrow);
+  vertical-align: -0.12em;
+  margin-right: 12px;
+  flex: 0 0 auto;
+}
+#app-root-2026-annual_report .ar-eyebrow {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--un-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  margin-bottom: 10px;
+}
+#app-root-2026-annual_report .ar-eyebrow .ar-icon-arrow {
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 8px;
+}
+#app-root-2026-annual_report :where(.annual-report-app) section {
+  padding: 64px 0;
+}
+#app-root-2026-annual_report section.ar-pale {
+  background: var(--bg-pale);
+}
+#app-root-2026-annual_report .ar-section-head {
+  max-width: 760px;
+  margin-bottom: 36px;
+}
+#app-root-2026-annual_report .ar-section-head p {
+  color: var(--ink-80);
+  font-size: 1.05rem;
+}
+
+#app-root-2026-annual_report .annual-report-app .ar-icon-arrow--text {
+  background: currentColor;
+  height: 1em;
+  mask: var(--ar-shared-arrow) center / contain no-repeat;
+  -webkit-mask: var(--ar-shared-arrow) center / contain no-repeat;
+  width: 1em;
+}

@@ -1,0 +1,94 @@
+#app-root-2026-annual_report .ar-hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #0b3a5b center / cover no-repeat;
+  color: #fff;
+  padding: 46px 0 56px;
+  overflow: hidden;
+}
+
+#app-root-2026-annual_report .ar-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(0, 40, 70, 0.15) 0%, rgba(0, 28, 52, 0.55) 100%);
+}
+
+#app-root-2026-annual_report .ar-hero .ar-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+#app-root-2026-annual_report .ar-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#app-root-2026-annual_report .ar-button-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 20px;
+  padding: 9px 24px;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#app-root-2026-annual_report .ar-button-pill.ar-active {
+  background: var(--un-yellow);
+  color: #000;
+}
+#app-root-2026-annual_report .ar-button-pill svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+#app-root-2026-annual_report .ar-hero {
+  min-height: 74vh;
+}
+
+#app-root-2026-annual_report .ar-hero::after {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 28, 52, 0.62) 0%,
+    rgba(0, 30, 55, 0.22) 20%,
+    rgba(0, 22, 44, 0.12) 48%,
+    rgba(0, 22, 44, 0.55) 74%,
+    rgba(0, 18, 38, 0.88) 100%
+  );
+}
+
+#app-root-2026-annual_report .ar-quote {
+  margin: 26px 0;
+  padding: 6px 0 6px 22px;
+  border-left: 4px solid var(--un-blue);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--un-blue-dark);
+}
+
+#app-root-2026-annual_report .ar-sig {
+  margin-top: 22px;
+  color: var(--ink);
+}
+
+#app-root-2026-annual_report .ar-sig strong {
+  color: var(--ink);
+}
+
+#app-root-2026-annual_report .ar-lede {
+  font-size: 1.2rem;
+  color: var(--ink-80);
+}

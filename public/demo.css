@@ -1,0 +1,9 @@
+html:has(.annual-report-app) {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.annual-report-app) {
+    scroll-behavior: auto;
+  }
+}

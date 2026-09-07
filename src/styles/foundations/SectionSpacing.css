@@ -1,0 +1,19 @@
+#app-root-2026-annual_report :where(.annual-report-app) #glance {
+  padding: 84px 0;
+}
+#app-root-2026-annual_report :where(.annual-report-app) #moments {
+  padding: 42px 0 30px;
+}
+#app-root-2026-annual_report #moments .ar-section-head {
+  margin-bottom: 10px;
+  max-width: none;
+}
+#app-root-2026-annual_report #moments .ar-section-head p {
+  margin-bottom: 0;
+}
+#app-root-2026-annual_report #moments .ar-section-head h2 {
+  margin-bottom: 0.25em;
+}
+#app-root-2026-annual_report :where(.annual-report-app) #overview {
+  padding: 84px 0 76px;
+}

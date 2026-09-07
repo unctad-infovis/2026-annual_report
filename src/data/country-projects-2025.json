@@ -1,0 +1,1101 @@
+{
+  "source": {
+    "file": "countries_only_sheet1.xlsx",
+    "sheet": "Projects by country",
+    "range": "A1:G108"
+  },
+  "countries": [
+    {
+      "code": "004",
+      "name": "Afghanistan",
+      "projects": [
+        {
+          "id": "AFG/0T/NAS",
+          "division": "ASYCUDA",
+          "title": "Cross-sectoral Cluster Survey of Afghanistan’s Micro, Small, and Medium-sized Enterprises (MSMEs)",
+          "sourceRow": 28
+        },
+        {
+          "id": "AFG/0T/NAS2",
+          "division": "ASYCUDA",
+          "title": "Strengthening Afghanistan's Industrial Parks",
+          "sourceRow": 34
+        },
+        {
+          "id": "AFG/0T/LAB",
+          "division": "ASYCUDA",
+          "title": "Supporting Community Resilience Programming Strategy (ABADEI Strategy)",
+          "sourceRow": 76
+        },
+        {
+          "id": "AFG/0T/LAB-4",
+          "division": "ASYCUDA",
+          "title": "South Eastern Window 1: essential services",
+          "sourceRow": 88
+        },
+        {
+          "id": "AFG/0T/HBU5",
+          "division": "ASYCUDA",
+          "title": "Support to Humanitarian Aid Flow in Afghanistan (SHAFA)",
+          "sourceRow": 107
+        }
+      ]
+    },
+    {
+      "code": "008",
+      "name": "Albania",
+      "projects": [
+        {
+          "id": "ALB/0T/LBL",
+          "division": "ASYCUDA",
+          "title": "ASYHUB & ASYCUDAWorld systems in the Albanian Customs Administration",
+          "sourceRow": 26
+        },
+        {
+          "id": "ALB/0T/NAK",
+          "division": "DITC",
+          "title": "Fostering Competition Law and Policy and Competition Culture in Albania",
+          "sourceRow": 31
+        },
+        {
+          "id": "ALB/0T/NAV",
+          "division": "ASYCUDA",
+          "title": "Maintenance of Operational ASYCUDAWorld System of the Albanian Customs admin.",
+          "sourceRow": 87
+        }
+      ]
+    },
+    {
+      "code": "024",
+      "name": "Angola",
+      "projects": [
+        {
+          "id": "ANG/0T/NBC",
+          "division": "ASYCUDA",
+          "title": "ANGOLA - ASY5 Computerization of Customs Procedures",
+          "sourceRow": 108
+        }
+      ]
+    },
+    {
+      "code": "032",
+      "name": "Argentina",
+      "projects": [
+        {
+          "id": "ARG/0T/MAQ",
+          "division": "DIAE",
+          "title": "eRegistrations Lomas de Zamora Argentina",
+          "sourceRow": 33
+        }
+      ]
+    },
+    {
+      "code": "533",
+      "name": "Aruba",
+      "projects": [
+        {
+          "id": "ARU/0T/KAY",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA World Consolidation at the Aruba Customs & Excise Department",
+          "sourceRow": 47
+        }
+      ]
+    },
+    {
+      "code": "050",
+      "name": "Bangladesh",
+      "projects": [
+        {
+          "id": "BGD/0T/OAS",
+          "division": "DIAE",
+          "title": "Report on the Implementation of the Investment Policy Review of Bangladesh",
+          "sourceRow": 18
+        },
+        {
+          "id": "BGD/0T/FAC",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA World - ASYCUDA Support Mechanism for Asia",
+          "sourceRow": 104
+        }
+      ]
+    },
+    {
+      "code": "052",
+      "name": "Barbados",
+      "projects": [
+        {
+          "id": "BAR/0T/JAX",
+          "division": "DGDS",
+          "title": "Promoting Economic Diversification and Resilience in Barbados for Sustained Recovery from Covid-19 Shock",
+          "sourceRow": 37
+        },
+        {
+          "id": "BAR/0T/JBM",
+          "division": "ASYCUDA",
+          "title": "Barbados Electronic Single Window for Trade",
+          "sourceRow": 83
+        }
+      ]
+    },
+    {
+      "code": "070",
+      "name": "Bosnia and Herzegovina",
+      "projects": [
+        {
+          "id": "BIH/0T/OAM",
+          "division": "ASYCUDA",
+          "title": "Pre-Arrival Processing for Express Consignments & AEO in Bosnia and Herzegovina",
+          "sourceRow": 12
+        }
+      ]
+    },
+    {
+      "code": "072",
+      "name": "Botswana",
+      "projects": [
+        {
+          "id": "BOT/0T/HBM",
+          "division": "DTL",
+          "title": "ICT Policy Review: National E-Commerce Strategy for Botswana",
+          "sourceRow": 4
+        }
+      ]
+    },
+    {
+      "code": "854",
+      "name": "Burkina Faso",
+      "projects": [
+        {
+          "id": "BKF/0T/KAO",
+          "division": "ASYCUDA",
+          "title": "SYDONIA World Burkina Faso",
+          "sourceRow": 64
+        }
+      ]
+    },
+    {
+      "code": "108",
+      "name": "Burundi",
+      "projects": [
+        {
+          "id": "BDI/0T/OBH",
+          "division": "ASYCUDA",
+          "title": "Projet Guichet Unique (2ème phase) – développement module Code Exportateur",
+          "sourceRow": 46
+        },
+        {
+          "id": "BDI/0T/OAA",
+          "division": "ASYCUDA",
+          "title": "Projet Guichet Unique (2ème phase) – développement web module ABREMA",
+          "sourceRow": 78
+        }
+      ]
+    },
+    {
+      "code": "132",
+      "name": "Cabo Verde",
+      "projects": [
+        {
+          "id": "CVI/0T/MAS",
+          "division": "ASYCUDA",
+          "title": "Digital Cabo Verde Project SYDONIA",
+          "sourceRow": 77
+        }
+      ]
+    },
+    {
+      "code": "178",
+      "name": "Congo",
+      "projects": [
+        {
+          "id": "PRC/0T/AAQ",
+          "division": "DMFAS",
+          "title": "DMFAS project - Republic of Congo",
+          "sourceRow": 8
+        },
+        {
+          "id": "PRC/0T/OBF",
+          "division": "ASYCUDA",
+          "title": "Projet de Renforcement de SYDONIAWorld PRCongo",
+          "sourceRow": 23
+        }
+      ]
+    },
+    {
+      "code": "384",
+      "name": "Côte d’Ivoire",
+      "projects": [
+        {
+          "id": "IVC/0T/BCF",
+          "division": "DMFAS",
+          "title": "Modernisation des outils informatiques et de renforcement des capacités de gestion de la dette SYGADE 6 - Cote d'Ivoire",
+          "sourceRow": 15
+        }
+      ]
+    },
+    {
+      "code": "192",
+      "name": "Cuba",
+      "projects": [
+        {
+          "id": "CUB/0T/OAN",
+          "division": "DIAE",
+          "title": "Cuba Foreing Trade Single Window - Phase 2\nExtension of the scope of the SW to new procedures",
+          "sourceRow": 85
+        }
+      ]
+    },
+    {
+      "code": "531",
+      "name": "Curacao",
+      "projects": [
+        {
+          "id": "CUR/0T/FAY",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA World consolidation - Curacao",
+          "sourceRow": 2
+        }
+      ]
+    },
+    {
+      "code": "180",
+      "name": "Democratic Republic of the Congo",
+      "projects": [
+        {
+          "id": "DRC/0T/OBN",
+          "division": "DTL",
+          "title": "UNCTAD-TMA Cooperation on Trade Facilitation",
+          "sourceRow": 19
+        },
+        {
+          "id": "RAF/0T/LBG",
+          "division": "DITC",
+          "title": "Cadre de référence de l’assistance technique sur la concurrence et consommation - République Démocratique du Congo",
+          "sourceRow": 27
+        },
+        {
+          "id": "DRC/0T/MAD",
+          "division": "ASYCUDA",
+          "title": "RDC: Renforcement de l'environnement éléctronique de la DGDA",
+          "sourceRow": 105
+        }
+      ]
+    },
+    {
+      "code": "262",
+      "name": "Djibouti",
+      "projects": [
+        {
+          "id": "DJI/0T/KAK",
+          "division": "DMFAS",
+          "title": "Projet de Gestion Économique et de Développement Statistique pour la prise de Décision",
+          "sourceRow": 41
+        },
+        {
+          "id": "DJI/0T/LBF",
+          "division": "ASYCUDA",
+          "title": "Projet du corridor économique régional de Djibouti",
+          "sourceRow": 84
+        }
+      ]
+    },
+    {
+      "code": "818",
+      "name": "Egypt",
+      "projects": [
+        {
+          "id": "INT/0T/LAL3",
+          "division": "DTL",
+          "title": "Strengthen the capacities of members of Egypt’s National Trade Facilitation Comm",
+          "sourceRow": 5
+        }
+      ]
+    },
+    {
+      "code": "222",
+      "name": "El Salvador",
+      "projects": [
+        {
+          "id": "ELS/0T/JAN",
+          "division": "ASYCUDA",
+          "title": "ASYCUDAWorld - El Salvador",
+          "sourceRow": 54
+        }
+      ]
+    },
+    {
+      "code": "226",
+      "name": "Equatorial Guinea",
+      "projects": [
+        {
+          "id": "EQG/0T/IBI",
+          "division": "DMFAS",
+          "title": "SYGADE project Equatorial Guinea",
+          "sourceRow": 75
+        },
+        {
+          "id": "EQG/0T/MBJ",
+          "division": "ASYCUDA",
+          "title": "Renforcement de la mise en œuvre de SYDONIAWorld",
+          "sourceRow": 90
+        }
+      ]
+    },
+    {
+      "code": "232",
+      "name": "Eritrea",
+      "projects": [
+        {
+          "id": "ERI/0T/NAW",
+          "division": "ASYCUDA",
+          "title": "Implementation of ASCUDAWorld Eritrea",
+          "sourceRow": 97
+        }
+      ]
+    },
+    {
+      "code": "748",
+      "name": "Eswatini",
+      "projects": [
+        {
+          "id": "SWA/0T/HBB",
+          "division": "ASYCUDA",
+          "title": "REINFORCING ANALYSIS OF RISK PROFILING AND INSTALL & IMPLEMENT- ASYPM -Eswatini",
+          "sourceRow": 3
+        },
+        {
+          "id": "SWA/TN/AG",
+          "division": "ASYCUDA",
+          "title": "Upgrading Of AsycudaWorld Eswatini",
+          "sourceRow": 32
+        }
+      ]
+    },
+    {
+      "code": "266",
+      "name": "Gabon",
+      "projects": [
+        {
+          "id": "GAB/0T/9AT",
+          "division": "DMFAS",
+          "title": "Renforcement des capacités d’études et modernisation des outils informatiques de gestion de la dette (Gabon)",
+          "sourceRow": 20
+        },
+        {
+          "id": "GAB/0T/MBH",
+          "division": "ASYCUDA",
+          "title": "Renforcement de la mise en œuvre de SYDONIAWorld Gabon",
+          "sourceRow": 66
+        }
+      ]
+    },
+    {
+      "code": "270",
+      "name": "Gambia",
+      "projects": [
+        {
+          "id": "RAS/0T/MBD2",
+          "division": "DTL",
+          "title": "Joint statement initiative on E-Commerce: Pilot Implementation Assessment",
+          "sourceRow": 21
+        },
+        {
+          "id": "GAM/0T/HAJ",
+          "division": "ASYCUDA",
+          "title": "Implementation of ASYCUDA World in Gambia",
+          "sourceRow": 39
+        }
+      ]
+    },
+    {
+      "code": "268",
+      "name": "Georgia",
+      "projects": [
+        {
+          "id": "GEO/0T/NBD",
+          "division": "ASYCUDA",
+          "title": "Development of Georgia Revenue Service Digital Customs Platform",
+          "sourceRow": 100
+        }
+      ]
+    },
+    {
+      "code": "288",
+      "name": "Ghana",
+      "projects": [
+        {
+          "id": "GHA/0T/NAP",
+          "division": "PSMS",
+          "title": "One UN Joint Programme: Leveraging digital ecosystem for increased MSMEs’ productivity",
+          "sourceRow": 57
+        }
+      ]
+    },
+    {
+      "code": "292",
+      "name": "Gibraltar",
+      "projects": [
+        {
+          "id": "GIB/0T/NAQ",
+          "division": "ASYCUDA",
+          "title": "Upgrade of ASYCUDAWorld System Operational in HM Customs Gibraltar",
+          "sourceRow": 68
+        }
+      ]
+    },
+    {
+      "code": "324",
+      "name": "Guinea",
+      "projects": [
+        {
+          "id": "GUI/0T/NAN",
+          "division": "ASYCUDA",
+          "title": "Automatisation de l’ETNM (étude du temps nécessaire de la mainlevée)  dans SYDONIA",
+          "sourceRow": 51
+        }
+      ]
+    },
+    {
+      "code": "624",
+      "name": "Guinea-Bissau",
+      "projects": [
+        {
+          "id": "GBS/0T/MAU",
+          "division": "ASYCUDA",
+          "title": "Projet SYDONIA Guinea Bissau",
+          "sourceRow": 73
+        }
+      ]
+    },
+    {
+      "code": "332",
+      "name": "Haiti",
+      "projects": [
+        {
+          "id": "HAI/0T/DAO",
+          "division": "ASYCUDA",
+          "title": "Consolidation of ASYCUDA World and simplification of customs procedures and operations",
+          "sourceRow": 96
+        }
+      ]
+    },
+    {
+      "code": "368",
+      "name": "Iraq",
+      "projects": [
+        {
+          "id": "IRQ/0T/KAA",
+          "division": "ASYCUDA",
+          "title": "Automation and Modernisation of Customs - Iraq",
+          "sourceRow": 106
+        }
+      ]
+    },
+    {
+      "code": "388",
+      "name": "Jamaica",
+      "projects": [
+        {
+          "id": "JAM/0T/GAS",
+          "division": "ASYCUDA",
+          "title": "Electronic Single Window for Trade in Jamaica",
+          "sourceRow": 61
+        },
+        {
+          "id": "JAM/0T/KAN",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA World Upgrade Project at the Jamaica Customs Agency",
+          "sourceRow": 67
+        }
+      ]
+    },
+    {
+      "code": "400",
+      "name": "Jordan",
+      "projects": [
+        {
+          "id": "JOR/0T/MBF",
+          "division": "ASYCUDA",
+          "title": "Customization and deployment of ASYHUB Maritime & piloting of ASYHUB Express a solution for Pre-Arrival/Pre-Departure processing for Maritime & Express consignments",
+          "sourceRow": 86
+        }
+      ]
+    },
+    {
+      "code": "398",
+      "name": "Kazakhstan",
+      "projects": [
+        {
+          "id": "KAZ/0T/KAE",
+          "division": "ASYCUDA",
+          "title": "Technical Support & Upgrade of IS ASTANA-1",
+          "sourceRow": 48
+        }
+      ]
+    },
+    {
+      "code": "404",
+      "name": "Kenya",
+      "projects": [
+        {
+          "id": "KEN/0T/MBI",
+          "division": "DIAE",
+          "title": "eRegistrations Kenya Investment Single Window",
+          "sourceRow": 60
+        }
+      ]
+    },
+    {
+      "code": "418",
+      "name": "Lao People’s Democratic Republic",
+      "projects": [
+        {
+          "id": "LAO/0T/NAZ",
+          "division": "ASYCUDA",
+          "title": "ASYCUDAWorld (AW) Version Upgrade Project in Lao PDR",
+          "sourceRow": 16
+        }
+      ]
+    },
+    {
+      "code": "422",
+      "name": "Lebanon",
+      "projects": [
+        {
+          "id": "LEB/0T/5BK",
+          "division": "ASYCUDA",
+          "title": "Implementation of ASYCUDAWorld in Lebanon",
+          "sourceRow": 43
+        }
+      ]
+    },
+    {
+      "code": "426",
+      "name": "Lesotho",
+      "projects": [
+        {
+          "id": "LES/0T/NAI",
+          "division": "DIAE",
+          "title": "Integrated online Business Facilitation Window Lesotho",
+          "sourceRow": 94
+        }
+      ]
+    },
+    {
+      "code": "450",
+      "name": "Madagascar",
+      "projects": [
+        {
+          "id": "MAG/0T/NAE",
+          "division": "ASYCUDA",
+          "title": "Support of the Customs of Madagascar",
+          "sourceRow": 38
+        }
+      ]
+    },
+    {
+      "code": "454",
+      "name": "Malawi",
+      "projects": [
+        {
+          "id": "MLW/0T/LBE",
+          "division": "ASYCUDA",
+          "title": "Southern Africa Trade and Connectivity Malawi",
+          "sourceRow": 69
+        }
+      ]
+    },
+    {
+      "code": "462",
+      "name": "Maldives",
+      "projects": [
+        {
+          "id": "MDV/0T/HBK",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA Support Mechanism for the Asia Region (ASMA)",
+          "sourceRow": 22
+        }
+      ]
+    },
+    {
+      "code": "466",
+      "name": "Mali",
+      "projects": [
+        {
+          "id": "MLI/0T/9BF",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA project - Mali",
+          "sourceRow": 40
+        }
+      ]
+    },
+    {
+      "code": "478",
+      "name": "Mauritania",
+      "projects": [
+        {
+          "id": "MAU/0T/MBC",
+          "division": "DMFAS",
+          "title": "Renforcement des capacités de gestion de la dette en Mauritanie",
+          "sourceRow": 9
+        },
+        {
+          "id": "MAU/0T/LAI",
+          "division": "DMFAS",
+          "title": "Renforcement des capacités de gestion du système d'information de la dette",
+          "sourceRow": 10
+        },
+        {
+          "id": "MAU/0T/CAD",
+          "division": "ASYCUDA",
+          "title": "Projet de modernisation des douanes  - Mauritania",
+          "sourceRow": 50
+        },
+        {
+          "id": "MAU/0T/NBK",
+          "division": "DTL",
+          "title": "E-commerce Strategy of Mauritania - GIZ",
+          "sourceRow": 71
+        }
+      ]
+    },
+    {
+      "code": "496",
+      "name": "Mongolia",
+      "projects": [
+        {
+          "id": "MON/0T/LBA",
+          "division": "ASYCUDA",
+          "title": "Mongolia Digitalisation of Customs Services",
+          "sourceRow": 63
+        }
+      ]
+    },
+    {
+      "code": "508",
+      "name": "Mozambique",
+      "projects": [
+        {
+          "id": "MOZ/0T/JAH",
+          "division": "PSMS",
+          "title": "Building Competitiveness for Exports in Mozambique",
+          "sourceRow": 52
+        }
+      ]
+    },
+    {
+      "code": "516",
+      "name": "Namibia",
+      "projects": [
+        {
+          "id": "NAM/0T/MAN",
+          "division": "ASYCUDA",
+          "title": "Upgrade and Enhancement of ASYCUDAWorld",
+          "sourceRow": 95
+        }
+      ]
+    },
+    {
+      "code": "524",
+      "name": "Nepal",
+      "projects": [
+        {
+          "id": "NEP/0T/GAU",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA Support Mechanism for Asia - Nepal",
+          "sourceRow": 89
+        }
+      ]
+    },
+    {
+      "code": "540",
+      "name": "New Caledonia",
+      "projects": [
+        {
+          "id": "NCA/0T/HBZ",
+          "division": "ASYCUDA",
+          "title": "Impèlementation de SYDONIA World en Nouvelle Calédonie",
+          "sourceRow": 79
+        }
+      ]
+    },
+    {
+      "code": "562",
+      "name": "Niger",
+      "projects": [
+        {
+          "id": "NER/0T/JAG",
+          "division": "DMFAS",
+          "title": "Mise en oeuvre du SYGADE 6 renforcement des capacités de gestion dette Niger",
+          "sourceRow": 44
+        },
+        {
+          "id": "NER/0T/JAL",
+          "division": "ASYCUDA",
+          "title": "SYDONIAWorld  (Phase 3) Niger",
+          "sourceRow": 65
+        }
+      ]
+    },
+    {
+      "code": "586",
+      "name": "Pakistan",
+      "projects": [
+        {
+          "id": "INT/0T/MBK",
+          "division": "DMFAS",
+          "title": "Supporting Debt Management and Transparency-Support to Public Debt Management in Pakistan (domestic debt integration)",
+          "sourceRow": 53
+        }
+      ]
+    },
+    {
+      "code": "598",
+      "name": "Papua New Guinea",
+      "projects": [
+        {
+          "id": "PNG/0T/NBG",
+          "division": "ASYCUDA",
+          "title": "eCITES Feasibility Study in Papua New Guinea",
+          "sourceRow": 35
+        }
+      ]
+    },
+    {
+      "code": "498",
+      "name": "Republic of Moldova",
+      "projects": [
+        {
+          "id": "MOL/0T/EAF",
+          "division": "DMFAS",
+          "title": "DMFAS 6 implementation in Moldova",
+          "sourceRow": 13
+        },
+        {
+          "id": "MOL/0T/KAP",
+          "division": "ASYCUDA",
+          "title": "E-Commerce support solution for cu",
+          "sourceRow": 72
+        },
+        {
+          "id": "MOL/0T/LBB",
+          "division": "ASYCUDA",
+          "title": "Development & Implementation of the National Transit System (NTS) of the Customs",
+          "sourceRow": 92
+        }
+      ]
+    },
+    {
+      "code": "646",
+      "name": "Rwanda",
+      "projects": [
+        {
+          "id": "RWA/0T/NBH",
+          "division": "PSMS",
+          "title": "The project is aiming at amplifying digital opportunities in cross-border trade",
+          "sourceRow": 59
+        }
+      ]
+    },
+    {
+      "code": "666",
+      "name": "Saint Pierre and Miquelon",
+      "projects": [
+        {
+          "id": "SPM/0T/DAF",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA World Implementation in Saint Pierre et Miquelon",
+          "sourceRow": 24
+        }
+      ]
+    },
+    {
+      "code": "670",
+      "name": "Saint Vincent and the Grenadines",
+      "projects": [
+        {
+          "id": "STV/0T/MBE",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA Electronic Single Window for Trade in St Vincent",
+          "sourceRow": 101
+        }
+      ]
+    },
+    {
+      "code": "678",
+      "name": "Sao Tome and Principe",
+      "projects": [
+        {
+          "id": "STP/0T/NAR",
+          "division": "ASYCUDA",
+          "title": "ASYCUDAWorld Upgrade in São Tome and Principe",
+          "sourceRow": 102
+        }
+      ]
+    },
+    {
+      "code": "682",
+      "name": "Saudi Arabia",
+      "projects": [
+        {
+          "id": "SAU/0T/NAJ",
+          "division": "DTL",
+          "title": "Project on Measuring E-Commerce and Digital Commerce",
+          "sourceRow": 82
+        },
+        {
+          "id": "SAU/0T/CBI",
+          "division": "DIAE",
+          "title": "Empretec Saudi Arabia",
+          "sourceRow": 91
+        }
+      ]
+    },
+    {
+      "code": "690",
+      "name": "Seychelles",
+      "projects": [
+        {
+          "id": "SEY/0T/OBB",
+          "division": "ASYCUDA",
+          "title": "Upgrading Of Aw & Support Mechanism",
+          "sourceRow": 74
+        }
+      ]
+    },
+    {
+      "code": "090",
+      "name": "Solomon Islands",
+      "projects": [
+        {
+          "id": "SOI/0T/OAK",
+          "division": "ASYCUDA",
+          "title": "eCITES Feasibility Study in Solomon Islands",
+          "sourceRow": 30
+        }
+      ]
+    },
+    {
+      "code": "728",
+      "name": "South Sudan",
+      "projects": [
+        {
+          "id": "SUD/0T/NBB",
+          "division": "DMFAS",
+          "title": "Strengthening Public Debt Management in South Sudan through DMFAS",
+          "sourceRow": 29
+        }
+      ]
+    },
+    {
+      "code": "144",
+      "name": "Sri Lanka",
+      "projects": [
+        {
+          "id": "RAS/0T/DBT",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA Support Mechanism for Asia",
+          "sourceRow": 58
+        }
+      ]
+    },
+    {
+      "code": "729",
+      "name": "Sudan",
+      "projects": [
+        {
+          "id": "SUD/0T/JBT",
+          "division": "ASYCUDA",
+          "title": "MOA on ASYCUDAWorld Support Mechanism Sudan",
+          "sourceRow": 49
+        }
+      ]
+    },
+    {
+      "code": "740",
+      "name": "Suriname",
+      "projects": [
+        {
+          "id": "SUR/0T/LBD",
+          "division": "ASYCUDA",
+          "title": "Strengthening Customs Management Capacity in the Suriname Customs & Excise Department- ASYCUDA World Consolidation",
+          "sourceRow": 25
+        }
+      ]
+    },
+    {
+      "code": "762",
+      "name": "Tajikistan",
+      "projects": [
+        {
+          "id": "TAJ/0T/KBB",
+          "division": "ASYCUDA",
+          "title": "Phase four of the Central Asia Regional Links Programme (CARS-4) Tajikistan",
+          "sourceRow": 103
+        }
+      ]
+    },
+    {
+      "code": "626",
+      "name": "Timor-Leste",
+      "projects": [
+        {
+          "id": "TIM/0T/HCR",
+          "division": "ASYCUDA",
+          "title": "Implementation of the Trade Single Window System for Timor Leste (TL-TSWS)",
+          "sourceRow": 99
+        }
+      ]
+    },
+    {
+      "code": "780",
+      "name": "Trinidad and Tobago",
+      "projects": [
+        {
+          "id": "TRI/0T/LAQ",
+          "division": "DTL",
+          "title": "Trinidad and Tobago E-commerce Strategy Development Project",
+          "sourceRow": 11
+        },
+        {
+          "id": "TRI/0T/OAO",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA Extended Digitalization of the Customs Clearance in Trinidad and Tobago",
+          "sourceRow": 80
+        }
+      ]
+    },
+    {
+      "code": "795",
+      "name": "Turkmenistan",
+      "projects": [
+        {
+          "id": "TUK/0T/NAO",
+          "division": "ASYCUDA",
+          "title": "Phase 3. Enhancing Digitalization and Regional Transit Connectivity",
+          "sourceRow": 7
+        }
+      ]
+    },
+    {
+      "code": "784",
+      "name": "United Arab Emirates",
+      "projects": [
+        {
+          "id": "RAB/0T/MAX",
+          "division": "DTL",
+          "title": "Strengthening Abu Dhabi’s trade facilitation committee",
+          "sourceRow": 55
+        }
+      ]
+    },
+    {
+      "code": "860",
+      "name": "Uzbekistan",
+      "projects": [
+        {
+          "id": "UZB/0T/NBI",
+          "division": "DMFAS",
+          "title": "Strengthening Uzbekistan debt management office in the use of DMFAS 6 and interfacing DMFAS with DMBAT",
+          "sourceRow": 17
+        }
+      ]
+    },
+    {
+      "code": "548",
+      "name": "Vanuatu",
+      "projects": [
+        {
+          "id": "VAN/0T/HBJ",
+          "division": "ASYCUDA",
+          "title": "Technical Consulting Services Agreement (Vanuatu ESWS)",
+          "sourceRow": 81
+        }
+      ]
+    },
+    {
+      "code": "862",
+      "name": "Venezuela (Bolivarian Republic of)",
+      "projects": [
+        {
+          "id": "VEN/0T/LBN",
+          "division": "ASYCUDA",
+          "title": "ASYCUDAWorld Support to the SENIAT - Venezuela new version 4.3.3",
+          "sourceRow": 42
+        },
+        {
+          "id": "VEN/0T/MAW",
+          "division": "DGDS",
+          "title": "Venezuela Project 2023 CAF-UNCTAD",
+          "sourceRow": 56
+        },
+        {
+          "id": "VEN/0T/OAJ",
+          "division": "ASYCUDA",
+          "title": "ASYCUDA/Single Window Venezuela",
+          "sourceRow": 70
+        },
+        {
+          "id": "VEN/0T/MAC",
+          "division": "ASYCUDA",
+          "title": "ASYCUDAWorld Support to the SENIAT - Venezuela",
+          "sourceRow": 93
+        }
+      ]
+    },
+    {
+      "code": "704",
+      "name": "Viet Nam",
+      "projects": [
+        {
+          "id": "VIE/0T/NBE",
+          "division": "ASYCUDA",
+          "title": "Support the planning and implementation of the e-permitting system for CITES in Viet Nam",
+          "sourceRow": 6
+        }
+      ]
+    },
+    {
+      "code": "894",
+      "name": "Zambia",
+      "projects": [
+        {
+          "id": "ZAM/0T/MAK",
+          "division": "ASYCUDA",
+          "title": "Enhancement of ASYCUDAWorld Zambia",
+          "sourceRow": 14
+        },
+        {
+          "id": "ZAM/0T/OBU",
+          "division": "ASYCUDA",
+          "title": "Upgrade and Support Mechanism for ASYCUDAWorld",
+          "sourceRow": 36
+        },
+        {
+          "id": "ZAM/0T/MBM",
+          "division": "DMFAS",
+          "title": "Strenghthening Good Financial Governance in Zambia IV",
+          "sourceRow": 62
+        }
+      ]
+    },
+    {
+      "code": "716",
+      "name": "Zimbabwe",
+      "projects": [
+        {
+          "id": "ZIM/0T/MAM",
+          "division": "DTL",
+          "title": "eTrade Readiness Assessment of Zimbabwe",
+          "sourceRow": 45
+        },
+        {
+          "id": "ZIM/0T/JBB",
+          "division": "ASYCUDA",
+          "title": "Zimbabwe Electronic Single Window",
+          "sourceRow": 98
+        }
+      ]
+    }
+  ]
+}

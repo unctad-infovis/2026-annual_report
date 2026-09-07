@@ -1,0 +1,11 @@
+#app-root-2026-annual_report .ar-rv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#app-root-2026-annual_report .ar-rv.ar-in {
+  opacity: 1;
+  transform: none;
+}

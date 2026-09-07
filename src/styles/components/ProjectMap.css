@@ -1,0 +1,60 @@
+#app-root-2026-annual_report .ar-project-map {
+  position: relative;
+  background: #f7fafc;
+  border-radius: 16px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 20px;
+}
+#app-root-2026-annual_report .ar-project-map-search {
+  grid-column: 1 / -1;
+  max-width: 360px;
+  width: 100%;
+}
+#app-root-2026-annual_report .ar-project-map-chart {
+  min-width: 0;
+  height: clamp(320px, 38vw, 620px);
+}
+#app-root-2026-annual_report .ar-project-map-panel {
+  align-self: center;
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 6px 24px #003a6d14;
+}
+#app-root-2026-annual_report .ar-project-map-panel h4 {
+  margin: 0 0 16px;
+}
+#app-root-2026-annual_report .ar-project-map-panel ul {
+  padding-inline-start: 20px;
+}
+#app-root-2026-annual_report .ar-project-map-panel li {
+  margin-block: 12px;
+}
+
+#app-root-2026-annual_report .ar-project-map .un_select {
+  font-family: inherit;
+}
+#app-root-2026-annual_report .ar-project-map .un_select_listbox {
+  z-index: 10;
+}
+@media (max-width: 1000px) {
+  #app-root-2026-annual_report .ar-project-map {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 12px;
+  }
+  #app-root-2026-annual_report .ar-project-map-panel {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+#app-root-2026-annual_report .ar-project-map-panel {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#app-root-2026-annual_report .ar-project-map-code {
+  display: block;
+  color: var(--ink-80);
+  margin-top: 4px;
+}

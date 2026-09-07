@@ -1,0 +1,29 @@
+@media (prefers-reduced-motion: reduce) {
+  #app-root-2026-annual_report .annual-report-app *,
+  #app-root-2026-annual_report .annual-report-app *::before,
+  #app-root-2026-annual_report .annual-report-app *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: Accessibility preference overrides component and inline animation settings. */
+    animation: none !important;
+    /* biome-ignore lint/complexity/noImportantStyles: Accessibility preference overrides component and inline transition settings. */
+    transition: none !important;
+    /* biome-ignore lint/complexity/noImportantStyles: Nested scrolling must also respect the motion preference. */
+    scroll-behavior: auto !important;
+  }
+  #app-root-2026-annual_report .annual-report-app div.container_back_to_top {
+    animation: none;
+  }
+  #app-root-2026-annual_report .ar-hero-anim {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  #app-root-2026-annual_report .ar-rv {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  #app-root-2026-annual_report .ar-gt,
+  #app-root-2026-annual_report .ar-button-pill {
+    transition: none;
+  }
+}

@@ -1,0 +1,127 @@
+#app-root-2026-annual_report .ar-xp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+#app-root-2026-annual_report .ar-xp-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 40, 80, 0.08);
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#app-root-2026-annual_report .ar-xp-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 46px rgba(0, 40, 80, 0.22);
+}
+#app-root-2026-annual_report .ar-xp-img {
+  position: absolute;
+  inset: -14px;
+  background-image: url('../../assets/img/explore-mosaic.jpg');
+  background-size: 300% 300%;
+  background-position: var(--bx) var(--by);
+  filter: grayscale(1) brightness(1.62) contrast(0.72);
+  transform: translate3d(var(--px, 0px), var(--py, 0px), 0) scale(var(--s, 1));
+  transition:
+    filter 0.5s,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#app-root-2026-annual_report .ar-xp-tint {
+  position: absolute;
+  inset: 0;
+  background: var(--tc);
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+  transition: opacity 0.5s;
+}
+#app-root-2026-annual_report .ar-xp-n {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  z-index: 2;
+  font: 800 clamp(2rem, 3.2vw, 3rem) / 1 var(--font);
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: -0.04em;
+  transition: color 0.5s;
+}
+#app-root-2026-annual_report .ar-xp-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 38px 18px 15px;
+  background: linear-gradient(transparent, rgba(0, 12, 26, 0.74));
+}
+#app-root-2026-annual_report .ar-xp-t {
+  display: block;
+  font: 800 clamp(0.95rem, 1.25vw, 1.12rem) / 1.24 var(--font);
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.38);
+}
+#app-root-2026-annual_report .ar-xp-go {
+  display: block;
+  margin-top: 7px;
+  font: 700 0.72rem var(--font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: 0.35s;
+}
+#app-root-2026-annual_report .ar-xp-tile:hover .ar-xp-tint,
+#app-root-2026-annual_report .ar-xp-tile:focus-visible .ar-xp-tint {
+  opacity: 0.12;
+}
+#app-root-2026-annual_report .ar-xp-tile:hover .ar-xp-img,
+#app-root-2026-annual_report .ar-xp-tile:focus-visible .ar-xp-img {
+  filter: grayscale(0) contrast(1) brightness(1);
+  --s: 1.06;
+}
+#app-root-2026-annual_report .ar-xp-tile:hover .ar-xp-n {
+  color: rgba(255, 255, 255, 0.85);
+}
+#app-root-2026-annual_report .ar-xp-tile:hover .ar-xp-go,
+#app-root-2026-annual_report .ar-xp-tile:focus-visible .ar-xp-go {
+  opacity: 1;
+  transform: none;
+}
+#app-root-2026-annual_report .ar-xp-tile:focus-visible {
+  outline: 3px solid var(--un-blue);
+  outline-offset: 3px;
+}
+#app-root-2026-annual_report .ar-xp-credit {
+  margin: 16px 2px 0;
+  font-size: 0.74rem;
+  color: var(--warm-grey);
+}
+#app-root-2026-annual_report .ar-xp-dl {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+@media (max-width: 820px) {
+  #app-root-2026-annual_report .ar-xp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  #app-root-2026-annual_report .ar-xp-grid {
+    grid-template-columns: 1fr;
+  }
+  #app-root-2026-annual_report .ar-xp-tile {
+    aspect-ratio: 16 / 10;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #app-root-2026-annual_report .ar-xp-img,
+  #app-root-2026-annual_report .ar-xp-tile {
+    transition: none;
+  }
+}

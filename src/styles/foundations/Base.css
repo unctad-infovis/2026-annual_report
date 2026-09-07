@@ -1,0 +1,54 @@
+#app-root-2026-annual_report :where(.annual-report-app) *,
+#app-root-2026-annual_report :where(.annual-report-app) *::before,
+#app-root-2026-annual_report :where(.annual-report-app) *::after {
+  box-sizing: border-box;
+}
+#app-root-2026-annual_report .annual-report-app {
+  container-type: inline-size;
+  margin: 0;
+  font-family: var(--font);
+  font-weight: 400;
+  color: var(--ink-80);
+  background: var(--bg);
+  line-height: 1.55;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+#app-root-2026-annual_report :where(.annual-report-app) h1,
+#app-root-2026-annual_report :where(.annual-report-app) h2,
+#app-root-2026-annual_report :where(.annual-report-app) h3 {
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.4em;
+}
+#app-root-2026-annual_report :where(.annual-report-app) h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  letter-spacing: -0.02em;
+}
+#app-root-2026-annual_report :where(.annual-report-app) h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  letter-spacing: -0.01em;
+}
+#app-root-2026-annual_report :where(.annual-report-app) h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#app-root-2026-annual_report :where(.annual-report-app) a {
+  color: var(--un-blue-mid);
+  text-decoration: none;
+}
+#app-root-2026-annual_report :where(.annual-report-app) a:hover {
+  text-decoration: underline;
+}
+#app-root-2026-annual_report :where(.annual-report-app) p {
+  margin: 0 0 1rem;
+}
+#app-root-2026-annual_report .ar-inline-paragraph {
+  display: block;
+  margin: 0 0 1rem;
+}
+#app-root-2026-annual_report :where(.annual-report-app) img,
+#app-root-2026-annual_report :where(.annual-report-app) svg {
+  max-width: 100%;
+}

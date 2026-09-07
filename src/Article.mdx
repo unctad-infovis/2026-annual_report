@@ -1,0 +1,1563 @@
+import ProjectMap from './jsx/components/ProjectMap.jsx';
+
+import countryProjects from './data/country-projects-2025.json';
+
+import AnimatedNumber from './jsx/components/AnimatedNumber.jsx';
+
+import PublicationCarousel from './jsx/components/PublicationCarousel.jsx';
+
+import { DonorLegend, DonorTotal } from './jsx/components/DonorPresentation.jsx';
+
+import {
+  ContributorBubble,
+  ExploreTile,
+  FundingBar,
+  PublicationCard,
+  ResultCard,
+  Statistic,
+  TimelineItem,
+} from './jsx/components/ReportPresentation.jsx';
+
+import ReportSection from './jsx/components/ReportSection.jsx';
+
+import SectionHeading from './jsx/components/SectionHeading.jsx';
+
+import SectionLabel from './jsx/components/SectionLabel.jsx';
+
+import TestimonialCard from './jsx/components/TestimonialCard.jsx';
+
+import { resolveAsset } from '@unctad-infovis/general-tools/helpers/BasePath.js';
+
+export const projectMapSettings = { showDivisions: true };
+
+export const projectMapLabels = {
+  search: 'Find a country or territory',
+  placeholder: 'Find a country…',
+  error: 'The map could not load. Use the country search to explore the projects.',
+  series: 'Technical cooperation projects, 2025',
+  projectCount: count => `${count} project${count === 1 ? '' : 's'}`,
+};
+
+export const donorGroups = [
+  { name: 'Developing economies', amount: '$27.1 million', percentage: 50.1, colour: '#009EDB', note: 'Largely self-financed projects' },
+  { name: 'International organizations', amount: '$15.3 million', percentage: 28.3, colour: '#FBAF17' },
+  { name: 'Developed economies', amount: '$10.3 million', percentage: 19.1, colour: '#004987' },
+  { name: 'Others', amount: '$1.3 million', percentage: 2.4, colour: '#AEA29A' },
+];
+
+export const donorTotal = {
+  prefix: '$',
+  value: '54',
+  suffix: ' million',
+  resetSuffix: 'M',
+  label: 'total voluntary contributions',
+};
+
+{/* The report's editorial source. React components provide layout and behaviour. */}
+
+<a className="ar-skip-link" href="#ar-main">Skip to report content</a>
+
+<BackToTop selector=".ar-hero" />
+
+<HeroSection>
+  <section className="ar-hero ar-cov">
+    <div className="ar-cov-video ar-hero-anim ar-d1">
+      <video
+        id="heroVid"
+        playsInline
+        muted
+        loop
+        autoPlay
+        preload="metadata"
+        poster={resolveAsset('assets/img/annual-report-hero-poster.jpg')}
+      >
+        <source src={resolveAsset('assets/vid/annual-report-hero-video.mp4')} type="video/mp4" />
+      </video>
+      <h1 className="ar-sr-only">Annual Report 2025: Shaping the future</h1>
+      <button className="ar-vid-toggle" id="vidToggle" type="button" aria-label="Pause the video">
+        <svg className="ar-i-pause" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" />
+        </svg>
+        <svg className="ar-i-play" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </button>
+    </div>
+    <div className="ar-container ar-cov-block">
+      <div className="ar-pills ar-hero-anim ar-d2">
+        <a className="ar-button-pill ar-active" href="https://unctad.org/system/files/official-document/osg2026d1_en.pdf">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
+          </svg>
+          {'Download the full report (PDF)'}
+        </a>
+      </div>
+    </div>
+  </section>
+</HeroSection>
+
+<main id="ar-main" tabIndex={-1}>
+  <OverviewSection>
+    <section id="overview">
+      <div className="ar-container">
+        <div className="ar-fw-grid">
+          <figure className="ar-fw-photo">
+            <span className="ar-ph-wrap">
+              <img
+                src={resolveAsset('assets/img/foreword-rebeca-grynspan.jpg')}
+                alt="Rebeca Grynspan, Secretary-General of UN Trade and Development, delivering a speech at the UNCTAD16 podium"
+              />
+              <span className="ar-ph-credit">© UN Trade and Development</span>
+            </span>
+            <figcaption>
+              {'Rebeca Grynspan'}
+              <span>Secretary-General, UN Trade and Development</span>
+            </figcaption>
+          </figure>
+          <div className="ar-fw-body">
+            <SectionLabel>{'Foreword'}</SectionLabel>
+            <h2>A defining year for UN Trade and Development</h2>
+            <p className="ar-lede">Our 16th ministerial conference (UNCTAD16) – the first held in Geneva since our founding in 1964 – brought member States together to adopt the Geneva Consensus, a renewed road map for our work at a time of extraordinary global change. The Geneva Consensus was a comprehensive outcome that reaffirmed UNCTAD’s role as the development arm of the United Nations.</p>
+            <p>2025 was also a year of widespread shocks. Tariff volatility reshaped world trade. Investment flows to developing countries weakened. Debt burdens grew heavier. Aid flows declined. For the most vulnerable economies, these pressures compounded one another, making the path to structural transformation steeper than ever.</p>
+            <blockquote className="ar-quote">This was a year that showed what UNCTAD can do under pressure.</blockquote>
+            <p className="ar-sig">
+              <strong>Rebeca Grynspan</strong>
+              <br />
+              {'Secretary-General, UN Trade and Development (UNCTAD)'}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </OverviewSection>
+  <Unctad16Section>
+    <section id="unctad16" className="ar-u16-wrap">
+      <div className="ar-u16-open">
+        <div className="ar-bgimg" aria-hidden="true" />
+        <div className="ar-container">
+          <div className="ar-u16-kick ar-red">
+            <svg viewBox="76 108 212 210" fill="currentColor" aria-hidden="true">
+              <path d="M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z" />
+            </svg>
+            {'UNCTAD16 · 16th United Nations Conference on Trade and Development'}
+          </div>
+          <h2 className="ar-u16-open-h">
+            {'Four days that'}
+            <br />
+            {'reset the compass'}
+          </h2>
+          <p className="ar-u16-open-meta">20–23 October 2025 · Palais des Nations, Geneva</p>
+        </div>
+      </div>
+      <div className="ar-u16-blk">
+        <div className="ar-container">
+          <div className="ar-u16-kick ar-blue">
+            <svg viewBox="76 108 212 210" fill="currentColor" aria-hidden="true">
+              <path d="M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z" />
+            </svg>
+            {'The moment'}
+          </div>
+          <div className="ar-u16-2col">
+            <p>UNCTAD’s quadrennial conference convened in Geneva at a time of profound shifts in the global economy – rising debt burdens, geopolitical tensions, uneven investment flows and rapid technological transformation.</p>
+            <p>One message emerged clearly: globalization has generated significant gains, yet structural barriers still keep many developing countries from fully benefiting from trade, investment and technological change.</p>
+          </div>
+          <div className="ar-u16-statrow">
+            <Statistic
+              className="ar-u16-stat"
+              variant="conference"
+              valueProps={{ className: 'ar-n-big ar-cl-red' }}
+              value={<AnimatedNumber value={171} decimals={0} duration={1300} threshold={0.4} />}
+            >
+              <p>member State delegations – a record for a United Nations conference on trade</p>
+            </Statistic>
+            <Statistic
+              className="ar-u16-stat"
+              variant="conference"
+              valueProps={{ className: 'ar-n-big ar-cl-blue' }}
+              value={<AnimatedNumber value={80} decimals={0} duration={1300} threshold={0.4} />}
+            >
+              <p>ministers and vice-ministers of trade and economy</p>
+            </Statistic>
+            <Statistic
+              className="ar-u16-stat"
+              variant="conference"
+              valueProps={{ className: 'ar-n-big ar-cl-red' }}
+              value={
+                <>
+                  <AnimatedNumber value={40} decimals={0} duration={1300} threshold={0.4} /> <span className="ar-suf">+</span>
+                </>
+              }
+            >
+              <p>high-level events, round tables and expert discussions</p>
+            </Statistic>
+          </div>
+          <p className="ar-u16-honest ar-u16-honest--wide">UNCTAD delivered the conference while, in the report’s own words, it “operated under significant resource constraints throughout the year.”</p>
+        </div>
+        <figure className="ar-u16-family">
+          <img
+            src={resolveAsset('assets/img/unctad16-family-photo.jpg')}
+            alt="Official family photo of delegations at UNCTAD16"
+            loading="lazy"
+          />
+          <figcaption>
+            <p>Delegations from 171 countries at the Palais des Nations · © UN Trade and Development</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div className="ar-u16-centre">
+        <div className="ar-container">
+          <div className="ar-u16-kick ar-white">
+            <svg viewBox="76 108 212 210" fill="currentColor" aria-hidden="true">
+              <path d="M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z" />
+            </svg>
+            {'The centrepiece'}
+          </div>
+          <div className="ar-gc-grid">
+            <div>
+              <div className="ar-u16-195 ar-n-big">
+                <AnimatedNumber value={195} decimals={0} duration={1300} threshold={0.4} />
+              </div>
+              <div className="ar-u16-c-sub">
+                {'member States.'}
+                <br />
+                {'A consensus reached.'}
+              </div>
+              <h3 className="ar-gc-title">The Geneva Consensus</h3>
+              <div className="ar-gc-sub">
+                <p>for a Just and Sustainable Economic Order</p>
+              </div>
+              <p className="ar-gc-p">
+                {
+                  'At UNCTAD16, member States adopted the Geneva Consensus, setting UNCTAD’s direction for the next four years, and the Political Declaration, which calls for strengthening the multilateral system and commits to building a global economy '
+                }
+                <b>that leaves no one behind</b>
+                {'.'}
+              </p>
+            </div>
+            <div>
+              <div className="ar-u16-kick ar-white">
+                <svg viewBox="76 108 212 210" fill="currentColor" aria-hidden="true">
+                  <path d="M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z" />
+                </svg>
+                {'It sets in motion'}
+              </div>
+              <ul className="ar-gc-list">
+                <li>
+                  <span className="ar-n">1</span>
+                  {'Strengthening productive capacities'}
+                </li>
+                <li>
+                  <span className="ar-n">2</span>
+                  {'Mobilizing sustainable investment'}
+                </li>
+                <li>
+                  <span className="ar-n">3</span>
+                  {'Addressing debt vulnerabilities'}
+                </li>
+                <li>
+                  <span className="ar-n">4</span>
+                  {'Harnessing digital transformation'}
+                </li>
+                <li>
+                  <span className="ar-n">5</span>
+                  {'Services trade as the new frontier'}
+                </li>
+                <li>
+                  <span className="ar-n">6</span>
+                  {'Development at the centre of global governance'}
+                </li>
+              </ul>
+              <div className="ar-gc-quote">
+                <img
+                  src={resolveAsset('assets/img/unctad16-closing-stage.jpg')}
+                  alt="Secretary-General Rebeca Grynspan on stage at the close of UNCTAD16"
+                  loading="lazy"
+                  className="ar-gc-photo--closing"
+                />
+                <div>
+                  <div className="ar-q">
+                    <p>A renewal of the organization’s mandate and a reaffirmation of the international community’s commitment to multilateral cooperation.</p>
+                  </div>
+                  <div className="ar-a">
+                    <p>Rebeca Grynspan · Secretary-General, UN Trade and Development</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="ar-u16-film">
+        <div className="ar-container">
+          <div className="ar-u16-kick ar-red">
+            <svg viewBox="76 108 212 210" fill="currentColor" aria-hidden="true">
+              <path d="M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z" />
+            </svg>
+            {'The closing film'}
+          </div>
+          <h3 className="ar-u16-h">Four days in under two minutes</h3>
+          <figure className="ar-film-frame">
+            <video
+              controls
+              preload="none"
+              playsInline
+              poster={resolveAsset('assets/img/unctad16-closing-film-poster.jpg')}
+              aria-label="UNCTAD16 closing film"
+            >
+              <source src="https://storage.unctad.org/videos/unctad16-closing_video.mp4?v=1" type="video/mp4" />
+              <p>
+                {'Your browser cannot play this video. '}
+                <a href="https://storage.unctad.org/videos/unctad16-closing_video.mp4?v=1">Open the film directly</a>
+                {'.'}
+              </p>
+            </video>
+            <figcaption>
+              <p>1 min 52 sec · UNCTAD16 closing film · © UN Trade and Development</p>
+            </figcaption>
+          </figure>
+          <div className="ar-u16-close">
+            <a className="ar-u16-videos" href="https://unctad.org/unctad16/videos" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              {'Explore more than 200 videos from UNCTAD16'}
+            </a>
+            <div className="ar-u16-next">
+              <span>
+                <span className="ar-inline-paragraph">The Geneva Consensus gives us a clear mandate for the years ahead.</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </Unctad16Section>
+  <AtAGlanceSection>
+    <ReportSection id="glance" className="ar-pale" aria-labelledby="ar-glance-title">
+      <SectionHeading id="ar-glance-title" label="At a glance" title="UNCTAD 2025 in numbers" />
+      <div className="ar-bento">
+        <div className="ar-gt ar-white ar-area-a" tabIndex={0} role="group" aria-label="Member States">
+          <div className="ar-big">
+            <AnimatedNumber value={195} decimals={0} duration={1300} threshold={0.4} />
+          </div>
+          <div className="ar-lbl">Member States</div>
+          <span className="ar-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d={
+                  'M48.65,50h-23.39c-.71,0-1.29-.58-1.29-1.29s.58-1.29,1.29-1.29h.96v-9.18h-.96c-.71,0-1.29-.58-1.29-1.29s.58-1.29,1.29-1.29h1.04c.64-5.31,5.17-9.44,10.65-9.44s10.02,4.13,10.65,9.44h1.04c.71,0,1.29.58,1.29,1.29s-.58,1.29-1.29,1.29h-.96v9.18h.96c.71,0,1.29.58,1.29,1.29s-.58,1.29-1.29,1.29ZM41.44,47.42h3.67v-9.18h-3.67v9.18ZM35.06,47.42h3.8v-9.18h-3.8v9.18ZM28.8,47.42h3.67v-9.18h-3.67v9.18ZM28.91,35.66h16.1c-.62-3.88-3.99-6.86-8.05-6.86s-7.43,2.98-8.05,6.86ZM1.29,50c-.71,0-1.29-.58-1.29-1.29V1.29C0,.58.58,0,1.29,0s1.29.58,1.29,1.29v.75l3.98-1.22C9.09.04,11.7-.18,14.34.15c2.63.33,5.1,1.21,7.36,2.6,1.9,1.17,3.98,1.91,6.18,2.21,2.2.3,4.4.15,6.55-.46l4.24-1.21c.49-.14,1.01-.16,1.51-.07s.98.3,1.38.61c.41.31.74.71.97,1.17.23.45.35.96.35,1.47v15.72c0,.71-.58,1.29-1.29,1.29s-1.29-.58-1.29-1.29V6.46c0-.11-.03-.22-.08-.32s-.12-.19-.21-.26c-.09-.07-.19-.11-.3-.13-.11-.02-.23-.02-.33.02l-4.24,1.21c-1.79.51-3.62.76-5.45.71v15.94c0,.71-.58,1.29-1.29,1.29s-1.29-.58-1.29-1.29V7.45c-2.4-.39-4.67-1.23-6.75-2.51-1.43-.88-2.96-1.52-4.57-1.91v29.86c1.84.38,3.6,1.04,5.25,1.96.62.35.84,1.13.5,1.75-.35.62-1.13.85-1.75.5-1.8-1-3.73-1.64-5.76-1.9-2.27-.29-4.52-.1-6.7.58l-4.74,1.46v11.46c0,.71-.58,1.29-1.29,1.29ZM2.58,4.74v29.81l3.98-1.22c2.16-.66,4.39-.93,6.64-.78V2.63c-1.99-.16-3.96.07-5.88.66l-4.74,1.46Z'
+                }
+               />
+            </svg>
+          </span>
+        </div>
+        <div className="ar-gt ar-red ar-area-b" tabIndex={0} role="group" aria-label="UNCTAD16 participation">
+          <p className="ar-rtop">UNCTAD16 took place from 20 to 23 October, with 171 countries participating – a record for a United Nations conference on trade.</p>
+          <div className="ar-big">
+            <AnimatedNumber value={171} decimals={0} duration={1300} threshold={0.4} />
+            {' '}
+            <span className="ar-u">countries</span>
+          </div>
+          <p className="ar-ritalic">a record for a United Nations conference on trade</p>
+          <span className="ar-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d={
+                  'M28.04,49.95c-.42,0-.75-.35-.75-.79v-14.72c0-.44.34-.79.75-.79s.75.35.75.79v5.52h11.97c.5,0,.95-.31,1.15-.8l4.3-10.52c.17-.41.13-.87-.11-1.24-.23-.37-.62-.59-1.05-.59H4.95c-.42,0-.81.22-1.05.59-.23.37-.27.83-.1,1.24l4.3,10.52c.2.48.65.8,1.15.8h12v-5.52c0-.44.34-.79.75-.79s.75.35.75.79v14.72c0,.44-.34.79-.75.79s-.75-.35-.75-.79v-7.62h-12c-1.1,0-2.1-.69-2.54-1.75l-4.3-10.52c-.37-.89-.28-1.92.23-2.73.51-.81,1.37-1.3,2.3-1.3h3.63l-3-5.02c-.95-1.6-.97-3.6-.05-5.22l1.2-2.09-2.19-1.28c-.17-.1-.3-.27-.36-.47-.05-.2-.03-.42.07-.6l3.42-6.43c1.01-1.9,3.31-2.58,5.12-1.53.88.51,1.51,1.35,1.79,2.37.28,1.01.16,2.08-.33,3l-3.42,6.43c-.2.38-.66.52-1.02.31l-1.76-1.02-1.23,2.14c-.63,1.11-.62,2.47.03,3.57l3.5,5.86h12.91v-4.77c-3.35-.38-5.98-3.34-6.03-6.94,0-.04,0-.08,0-.12s0-.08,0-.11v-6.08s0-.07,0-.11c0-.04,0-.08,0-.12.06-3.86,3.08-6.98,6.77-6.98s6.77,3.18,6.77,7.1v6.31c0,3.64-2.63,6.65-6.01,7.05v4.78h10.85l5.57-9.72-2.28-2.38c-1.05.61-2.44.42-3.3-.48l-1.42-1.49c-.9-.94-1.4-2.2-1.4-3.53,0-1.34.5-2.59,1.4-3.53.9-.94,2.1-1.46,3.37-1.46h0c1.27,0,2.47.52,3.37,1.46l1.42,1.49c.89.93,1.04,2.35.46,3.45l5.22,5.47h0c.52.55.81,1.27.81,2.04s-.29,1.5-.81,2.05c-.52.55-1.21.85-1.95.85h0c-.74,0-1.43-.3-1.95-.85l-1.85-1.94-4.91,8.57h7.68c.93,0,1.79.49,2.3,1.3.51.81.6,1.83.23,2.73l-4.3,10.52c-.44,1.06-1.43,1.75-2.54,1.75h-11.97v7.63c0,.44-.34.79-.75.79ZM18.79,14.2c.37,2.67,2.57,4.73,5.22,4.73s4.85-2.06,5.22-4.73h-3.21c-.42,0-.75-.35-.75-.79s.34-.79.75-.79h3.26v-4.73h-3.26c-.42,0-.75-.35-.75-.79s.34-.79.75-.79h3.21c-.37-2.67-2.57-4.73-5.22-4.73s-4.85,2.06-5.22,4.73h3.2c.42,0,.75.35.75.79s-.34.79-.75.79h-3.26v4.73h3.26c.42,0,.75.35.75.79s-.34.79-.75.79h-3.2ZM40.06,12.1l5.15,5.39c.24.25.55.39.89.39h0c.34,0,.65-.14.89-.39.24-.25.37-.58.37-.93s-.13-.68-.37-.93h0l-5.15-5.39-1.78,1.86ZM8.22,11.96l1.68.98,3.05-5.74c.29-.55.36-1.19.2-1.8-.16-.61-.55-1.11-1.07-1.42s-1.14-.38-1.72-.21c-.58.17-1.06.57-1.35,1.13l-3.06,5.74,2.15,1.25s.06.03.09.05c.01,0,.03.02.04.02ZM37.58,4.22c-.87,0-1.69.36-2.31,1s-.96,1.5-.96,2.42c0,.91.34,1.77.95,2.42l1.42,1.49c.47.5,1.3.49,1.78,0l2.84-2.98c.49-.51.49-1.35,0-1.86h0l-1.42-1.49c-.62-.65-1.44-1-2.31-1h0Z'
+                }
+               />
+            </svg>
+          </span>
+        </div>
+        <div className="ar-gt ar-blue ar-area-c" tabIndex={0} role="group" aria-label="Staff members">
+          <div className="ar-big">
+            <AnimatedNumber value={522} decimals={0} duration={1300} threshold={0.4} />
+            <span className="ar-u">\*</span>
+          </div>
+          <div className="ar-lbl">staff members</div>
+          <span className="ar-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d={
+                  'M48.87,41.69H8.39c-4.63,0-8.39-3.77-8.39-8.39s3.77-8.39,8.39-8.39h40.48c.62,0,1.13.51,1.13,1.13s-.51,1.13-1.13,1.13H8.39c-3.38,0-6.14,2.75-6.14,6.14s2.75,6.14,6.14,6.14h40.48c.62,0,1.13.51,1.13,1.13s-.51,1.13-1.13,1.13ZM37.46,23.01c-.62,0-1.13-.51-1.13-1.13v-2.08c0-1.67-1.36-3.02-3.02-3.02s-3.02,1.36-3.02,3.02v2.08c0,.62-.51,1.13-1.13,1.13s-1.13-.51-1.13-1.13v-2.08c0-2.91,2.37-5.28,5.28-5.28s5.28,2.37,5.28,5.28v2.08c0,.62-.51,1.13-1.13,1.13ZM20.85,23.01c-.62,0-1.13-.51-1.13-1.13v-2.08c0-1.67-1.36-3.02-3.02-3.02s-3.02,1.36-3.02,3.02v2.08c0,.62-.51,1.13-1.13,1.13s-1.13-.51-1.13-1.13v-2.08c0-2.91,2.37-5.28,5.28-5.28s5.28,2.37,5.28,5.28v2.08c0,.62-.51,1.13-1.13,1.13ZM33.3,12.63c-3.48,0-6.32-2.83-6.32-6.32S29.82,0,33.3,0s6.32,2.83,6.32,6.32-2.83,6.32-6.32,6.32ZM33.3,2.25c-2.24,0-4.06,1.82-4.06,4.06s1.82,4.06,4.06,4.06,4.06-1.82,4.06-4.06-1.82-4.06-4.06-4.06ZM16.7,12.63c-3.48,0-6.32-2.83-6.32-6.32S13.21,0,16.7,0s6.32,2.83,6.32,6.32-2.83,6.32-6.32,6.32ZM16.7,2.25c-2.24,0-4.06,1.82-4.06,4.06s1.82,4.06,4.06,4.06,4.06-1.82,4.06-4.06-1.82-4.06-4.06-4.06Z'
+                }
+               />
+            </svg>
+          </span>
+        </div>
+        <div className="ar-gt ar-pale ar-area-d" tabIndex={0} role="group" aria-label="Regular budget">
+          <div className="ar-big">
+            <p>
+              {'$'}
+              <AnimatedNumber value={84.1} decimals={1} duration={1300} threshold={0.4} />
+              <span className="ar-u">million</span>
+            </p>
+          </div>
+          <div className="ar-lbl">regular budget</div>
+          <span className="ar-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d={
+                  'M36.34,50c-7.53,0-13.66-6.13-13.66-13.66s6.13-13.66,13.66-13.66,13.66,6.13,13.66,13.66-6.13,13.66-13.66,13.66ZM36.34,25.26c-6.11,0-11.08,4.97-11.08,11.08s4.97,11.08,11.08,11.08,11.08-4.97,11.08-11.08-4.97-11.08-11.08-11.08ZM18.82,45.84s-.04,0-.06,0c-10.87-.48-18.76-4.47-18.76-9.49V9.53h0C0,4.09,8.98,0,20.88,0s20.88,4.1,20.88,9.54v9.28c0,.71-.58,1.29-1.29,1.29s-1.29-.58-1.29-1.29v-4.54c-3.49,2.91-10.22,4.8-18.3,4.8s-14.81-1.89-18.3-4.8v3.51c0,3.29,7.52,6.96,18.3,6.96.71,0,1.29.58,1.29,1.29s-.58,1.29-1.29,1.29c-8.08,0-14.81-1.89-18.3-4.8v4.55c0,2.81,5.85,6.23,15.29,6.86.71.05,1.25.66,1.2,1.37s-.67,1.25-1.37,1.2c-6.71-.45-12.12-2.21-15.12-4.71v4.56c0,2.98,6.23,6.47,16.3,6.92.71.03,1.26.63,1.23,1.35-.03.69-.6,1.23-1.29,1.23ZM2.58,9.53c0,3.29,7.52,6.96,18.3,6.96s18.3-3.67,18.3-6.96-7.51-6.96-18.3-6.96S2.58,6.24,2.58,9.53ZM40.46,37.63h-4.13c-.71,0-1.29-.58-1.29-1.29v-6.19c0-.71.58-1.29,1.29-1.29s1.29.58,1.29,1.29v4.9h2.83c.71,0,1.29.58,1.29,1.29s-.58,1.29-1.29,1.29Z'
+                }
+               />
+            </svg>
+          </span>
+        </div>
+        <div className="ar-gt ar-pale2 ar-area-e" tabIndex={0} role="group" aria-label="Technical cooperation expenditure and projects">
+          <div className="ar-big">
+            <p>
+              {'$'}
+              <AnimatedNumber value={58.9} decimals={1} duration={1300} threshold={0.4} />
+            </p>
+            <span className="ar-u">
+              <br />
+              {'million'}
+            </span>
+          </div>
+          <div className="ar-lbl">technical cooperation expenditure</div>
+          <div className="ar-sub">
+            <span className="ar-big">
+              <AnimatedNumber value={203} decimals={0} duration={1300} threshold={0.4} />
+            </span>
+            <span className="ar-lbl ar-lbl--flush">
+              <span className="ar-inline-paragraph">technical cooperation projects</span>
+            </span>
+          </div>
+          <span className="ar-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d={
+                  'M41.77,50c-1.27,0-2.41-.59-3.14-1.51-.74.92-1.87,1.51-3.15,1.51-2.22,0-4.03-1.81-4.03-4.03v-17.6c-1.73,2.24-4.21,3.82-7.07,4.41-1.07.25-2.2,0-3.07-.7-.86-.67-1.37-1.68-1.39-2.78v-.02c0-1.5.91-2.82,2.29-3.38,3.37-1.24,3.66-2.11,4.09-3.44.13-.4.28-.85.51-1.34,2.34-4.02,6.59-6.47,11.16-6.47.04,0,.09,0,.13,0,3.22.02,6.35,1.37,8.58,3.71,2.23,2.34,3.43,5.53,3.3,8.75v5.21c0,1.65-1.34,2.98-2.98,2.98h-1.21v10.66c0,2.22-1.81,4.03-4.03,4.03ZM39.51,45.97c0,1.25,1.01,2.26,2.26,2.26s2.26-1.02,2.26-2.26v-20.98c0-.49.4-.88.88-.88s.88.4.88.88v8.56h1.21c.67,0,1.21-.54,1.21-1.21v-5.24c.11-2.78-.92-5.5-2.81-7.49s-4.56-3.14-7.31-3.16c-.04,0-.07,0-.11,0-3.94,0-7.61,2.11-9.6,5.52-.15.32-.27.7-.39,1.07-.6,1.82-1.28,3.12-5.14,4.54-.69.28-1.15.96-1.16,1.72.01.55.27,1.07.71,1.41.46.36,1.04.49,1.61.36,3.46-.71,6.25-3.1,7.51-6.38.15-.4.57-.64.99-.55.42.08.72.44.72.87v20.98c0,1.25,1.01,2.26,2.26,2.26s2.26-1.02,2.26-2.26v-10.49c0-.49.4-.88.88-.88s.88.4.88.88v10.49ZM15.56,50c-.49,0-.88-.4-.88-.88v-1.21h-3.31c-.49,0-.88-.4-.88-.88s.4-.88.88-.88h6.29c.67,0,1.21-.54,1.21-1.21s-.54-1.21-1.21-1.21h-4.19c-1.64,0-2.98-1.34-2.98-2.98s1.34-2.98,2.98-2.98h1.21v-1.21c0-.49.4-.88.88-.88s.88.4.88.88v1.21h3.31c.49,0,.88.4.88.88s-.4.88-.88.88h-6.29c-.67,0-1.21.54-1.21,1.21s.54,1.21,1.21,1.21h4.19c1.64,0,2.98,1.34,2.98,2.98s-1.34,2.98-2.98,2.98h-1.21v1.21c0,.49-.4.88-.88.88ZM5.08,50c-.49,0-.88-.4-.88-.88v-15.9H1.93c-1.07,0-1.93-.87-1.93-1.93v-3.15c0-.49.4-.88.88-.88h15.73c.49,0,.88.4.88.88s-.4.88-.88.88H1.77v2.26c0,.09.07.16.16.16h13.63c.49,0,.88.4.88.88s-.4.88-.88.88H5.96v15.9c0,.49-.4.88-.88.88ZM.95,24.82s-.07,0-.1,0c-.48-.06-.83-.49-.78-.98.55-4.8,4.28-8.54,9.07-9.09,4.79-.55,9.28,2.24,10.9,6.79.16.46-.08.97-.54,1.13-.46.17-.97-.08-1.13-.54-1.34-3.77-5.05-6.08-9.03-5.63-3.97.46-7.07,3.55-7.52,7.53-.05.45-.43.78-.88.78ZM37.58,12.23c-3.38,0-6.12-2.75-6.12-6.13S34.2-.03,37.58-.03s6.13,2.75,6.13,6.13-2.75,6.13-6.13,6.13ZM37.58,1.74c-2.4,0-4.36,1.96-4.36,4.36s1.95,4.36,4.36,4.36,4.36-1.96,4.36-4.36-1.96-4.36-4.36-4.36ZM10.32,12.23c-3.38,0-6.13-2.75-6.13-6.13S6.94-.03,10.32-.03s6.13,2.75,6.13,6.13-2.75,6.13-6.13,6.13ZM10.32,1.74c-2.4,0-4.36,1.96-4.36,4.36s1.95,4.36,4.36,4.36,4.36-1.96,4.36-4.36-1.95-4.36-4.36-4.36Z'
+                }
+               />
+            </svg>
+          </span>
+        </div>
+        <div className="ar-gt ar-yellow ar-area-f ar-ic-top" tabIndex={0} role="group" aria-label="Technical cooperation requests">
+          <div className="ar-big">
+            <AnimatedNumber value={78} decimals={0} duration={1300} threshold={0.4} />
+            <span className="ar-u">\*\*</span>
+          </div>
+          <div className="ar-lbl">
+            <p>technical cooperation requests from</p>
+          </div>
+          <div className="ar-sub">
+            <span className="ar-big">
+              <AnimatedNumber value={57} decimals={0} duration={1300} threshold={0.4} />
+            </span>
+            <span className="ar-lbl ar-lbl--flush">
+              <span className="ar-inline-paragraph">countries and territories and one regional organization</span>
+            </span>
+          </div>
+          <span className="ar-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d={
+                  'M45.84,45.82H4.24c-1.68,0-4.19-1.12-4.19-4.19v-24.96c0-1.68,1.12-4.19,4.19-4.19h41.6c1.68,0,4.19,1.12,4.19,4.19v24.96c0,1.68-1.12,4.19-4.19,4.19ZM45.83,14.62H4.24c-1.87,0-2.04,1.58-2.05,2.06v24.95c0,1.87,1.57,2.04,2.06,2.05h41.59c1.87,0,2.04-1.58,2.05-2.06v-24.95c0-1.87-1.57-2.04-2.06-2.05ZM34.4,39.58H9.45c-.59,0-1.07-.48-1.07-1.07s.48-1.07,1.07-1.07h24.96c.59,0,1.07.48,1.07,1.07s-.48,1.07-1.07,1.07ZM28.16,33.33H9.45c-.59,0-1.07-.48-1.07-1.07s.48-1.07,1.07-1.07h18.72c.59,0,1.07.48,1.07,1.07s-.48,1.07-1.07,1.07ZM42.72,29.18h-8.32c-.59,0-1.07-.48-1.07-1.07v-8.32c0-.59.48-1.07,1.07-1.07h8.32c.59,0,1.07.48,1.07,1.07v8.32c0,.59-.48,1.07-1.07,1.07ZM35.47,27.04h6.18v-6.18h-6.18v6.18ZM13.6,22.94h-4.16c-.59,0-1.07-.48-1.07-1.07s.48-1.07,1.07-1.07h4.16c.59,0,1.07.48,1.07,1.07s-.48,1.07-1.07,1.07ZM44.8,10.46H5.29c-.59,0-1.07-.48-1.07-1.07s.48-1.07,1.07-1.07h39.52c.59,0,1.07.48,1.07,1.07s-.48,1.07-1.07,1.07ZM40.64,6.3H9.45c-.59,0-1.07-.48-1.07-1.07s.48-1.07,1.07-1.07h31.2c.59,0,1.07.48,1.07,1.07s-.48,1.07-1.07,1.07ZM36.48,2.14H13.6c-.59,0-1.07-.48-1.07-1.07s.48-1.07,1.07-1.07h22.88c.59,0,1.07.48,1.07,1.07s-.48,1.07-1.07,1.07Z'
+                }
+               />
+            </svg>
+          </span>
+        </div>
+        <div
+          className="ar-gt ar-white-y ar-area-g ar-ic-top"
+          tabIndex={0}
+          role="group"
+          aria-label="Publications and analytical materials"
+        >
+          <div className="ar-big">
+            <AnimatedNumber value={238} decimals={0} duration={1300} threshold={0.4} />
+          </div>
+          <div className="ar-lbl">
+            <p>publications, research and analytical materials and parliamentary documents</p>
+          </div>
+          <span className="ar-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d={
+                  'M11.36,50c-.21,0-.42-.05-.62-.15-.45-.23-.74-.7-.74-1.21v-3.9h-1.53c-1.62,0-3.15-.63-4.3-1.78-1.15-1.15-1.78-2.68-1.78-4.3V7.66C2.39,3.51,5.89,0,10.04,0h11.82c.75,0,1.36.61,1.36,1.35s-.61,1.35-1.36,1.35h-11.82c-2.68,0-4.95,2.27-4.95,4.95v25.97c.97-.66,2.14-1.05,3.37-1.05h31.51c.09,0,.22-.13.22-.22v-4.07c0-.75.61-1.35,1.36-1.35s1.36.61,1.36,1.35v4.07c0,1.59-1.34,2.93-2.93,2.93h-.22v6.75h1.8c.75,0,1.36.61,1.36,1.35s-.61,1.35-1.36,1.35h-18.34v3.9c0,.51-.29.98-.74,1.21-.45.23-1,.19-1.41-.11l-4.46-3.23-4.46,3.23c-.24.17-.52.26-.8.26ZM16.61,43.48c.28,0,.56.09.8.26l3.1,2.25v-6.8c0-.75.61-1.35,1.36-1.35s1.36.61,1.36,1.35v2.85h13.83v-6.75H8.47c-1.83,0-3.37,1.55-3.37,3.37,0,.9.35,1.75.99,2.39.64.64,1.48.99,2.38.99h1.53v-2.85c0-.75.61-1.35,1.36-1.35s1.36.61,1.36,1.35v6.8l3.1-2.25c.24-.17.52-.26.8-.26ZM11.88,26.35c-1.18,0-2.14-.96-2.14-2.14s.96-2.14,2.14-2.14,2.14.96,2.14,2.14-.96,2.14-2.14,2.14ZM46.28,23.86h-16.65c-2.06,0-3.73-1.67-3.73-3.73V4.53c0-2.5,2.03-4.53,4.53-4.53h15.06c1.16,0,2.15.98,2.15,2.15v12.77c0,1.16-.98,2.15-2.15,2.15h-.54v4.08h1.33c.75,0,1.36.61,1.36,1.35s-.61,1.35-1.36,1.35ZM28.61,18.09v2.03c0,.55.48,1.02,1.02,1.02h12.6v-4.08h-12.6c-.54,0-1.02.48-1.02,1.03ZM30.42,2.71c-.98,0-1.81.83-1.81,1.82v9.97c.32-.09.67-.14,1.02-.14h15.29V2.71h-14.5ZM45.49,2.71h.02-.02ZM11.88,19c-1.18,0-2.14-.96-2.14-2.14s.96-2.14,2.14-2.14,2.14.96,2.14,2.14-.96,2.14-2.14,2.14ZM11.88,11.64c-1.18,0-2.14-.96-2.14-2.14s.96-2.14,2.14-2.14,2.14.96,2.14,2.14-.96,2.14-2.14,2.14Z'
+                }
+               />
+            </svg>
+          </span>
+        </div>
+        <div className="ar-gt ar-navy ar-area-h" tabIndex={0} role="group" aria-label="Countries and national projects">
+          <div className="ar-duo">
+            <span className="ar-big">
+              <AnimatedNumber value={75} decimals={0} duration={1300} threshold={0.4} />
+            </span>
+            <span className="ar-lbl ar-lbl--flush">
+              <span className="ar-inline-paragraph">countries benefited from</span>
+            </span>
+            <span className="ar-big">
+              <AnimatedNumber value={106} decimals={0} duration={1300} threshold={0.4} />
+            </span>
+            <span className="ar-lbl ar-lbl--flush">
+              {'national projects, including '}
+              <b>43 projects for the least developed countries</b>
+            </span>
+          </div>
+          <span className="ar-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d={
+                  'M25.02,49.95c-5.14,0-9.92-1.56-13.89-4.23-.16-.05-.3-.15-.41-.28-4.99-3.5-8.65-8.78-10.05-14.91-.01-.04-.02-.07-.03-.11-.39-1.75-.6-3.58-.6-5.45,0-1.67.16-3.3.48-4.87,0-.05.02-.1.03-.15C2.88,8.58,12.97,0,25.02,0c3.69,0,7.21.81,10.37,2.25.08.02.15.06.22.1,8.5,3.99,14.4,12.63,14.4,22.62,0,11.58-7.92,21.34-18.63,24.16-.07.03-.14.05-.22.06-1.96.5-4.01.76-6.13.76ZM14.48,45.64c3.16,1.62,6.75,2.54,10.54,2.54,1,0,2-.06,2.97-.19-1.56-.76-3.85-2.04-6.04-3.88-2.02.7-4.5,1.29-7.47,1.53ZM23.86,43.36c3.32,2.55,6.65,3.81,6.71,3.83l.51.19c4.74-1.28,8.89-4.03,11.91-7.73h0c0-8.97-2.94-13.06-2.97-13.1l-.52-.7c-.77.06-1.53-.09-2.2-.39-.48,3.81-1.92,7.41-4.21,10.51.1.33.16.69.16,1.05,0,1.93-1.57,3.5-3.51,3.5-.36,0-.72-.06-1.05-.16-.41.39-1.98,1.74-4.83,2.99ZM2.62,31.02c1.44,5.32,4.72,9.89,9.12,12.97,3.5-.03,6.38-.56,8.69-1.26-1.36-1.35-2.61-2.95-3.53-4.78-1.02-2.11-1.75-4.35-2.19-6.63-5.75-.87-10.56-.46-12.09-.29ZM16.58,31.64c.42,1.9,1.06,3.76,1.91,5.53.95,1.91,2.34,3.55,3.83,4.91,2.54-1.01,4.12-2.14,4.82-2.7-.56-.62-.9-1.44-.9-2.35,0-.67.19-1.29.51-1.82-3.32-1.82-6.85-2.92-10.16-3.57ZM28.91,38.55c.24.13.52.21.82.21.95,0,1.73-.78,1.73-1.73,0-.27-.06-.53-.17-.76-.01-.02-.02-.04-.03-.06-.47-.87-1.8-1.16-2.58-.56-.01.01-.02.02-.03.03-.39.32-.64.8-.64,1.35,0,.65.36,1.22.9,1.52,0,0,0,0,.01,0ZM41.31,25.32l.13.17c.12.16,2.79,3.82,3.25,11.78,2.24-3.57,3.53-7.78,3.53-12.3,0-8.53-4.63-16-11.51-20.04,1.18,3.88,1.77,7.85,1.78,11.86.22-.03.44-.05.67-.05,2.51,0,4.55,2.04,4.55,4.55,0,1.73-.97,3.24-2.4,4.01ZM29.73,33.52c.88,0,1.68.33,2.3.86,2.09-3.02,3.32-6.51,3.6-10.19-.64-.79-1.03-1.79-1.03-2.88,0-.04,0-.08,0-.13-3-2.69-6.8-4.33-10.81-4.69-.22,2.89-2.64,5.18-5.58,5.18-.64,0-1.26-.11-1.83-.31-.51,2.75-.56,5.59-.15,8.37,3.81.69,7.95,1.96,11.85,4.19.49-.26,1.05-.41,1.65-.41ZM7.58,28.98c1.95,0,4.29.11,6.83.47-.37-2.93-.27-5.92.32-8.83l.03-.14c-1.06-.83-1.82-2.05-2.06-3.43-2.08.25-7.41,1.13-10.48,3.63-.26,1.39-.4,2.83-.4,4.3s.14,2.91.4,4.31c.8-.1,2.73-.31,5.36-.31ZM39.16,18.53c-1.53,0-2.78,1.25-2.78,2.78s1.25,2.78,2.78,2.78,2.78-1.25,2.78-2.78-1.25-2.78-2.78-2.78ZM18.14,12.25c-2.08.04-3.75,1.74-3.75,3.83,0,2.11,1.72,3.83,3.83,3.83s3.83-1.72,3.83-3.83c0-2.09-1.68-3.79-3.75-3.83-.05,0-.1,0-.15,0ZM23.64,14.71c4.2.3,8.2,1.9,11.45,4.56.37-.73.93-1.35,1.62-1.79.07-4.48-.62-8.9-2.06-13.16l-.22-.55c-2.77-1.23-5.82-1.94-9.03-1.99-2.41,2.64-4.39,5.61-5.9,8.85,2.03.48,3.63,2.06,4.13,4.08ZM22.98,1.86C13.47,2.7,5.59,9.29,2.85,18.12c3.51-1.98,8.03-2.66,9.82-2.86.37-2.51,2.41-4.49,4.95-4.76,1.38-3.13,3.18-6.02,5.36-8.64Z'
+                }
+               />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <p className="ar-bento-notes">\* Includes 73 regular budget positions abolished effective 1 January 2026 following the UN80 resolution adopted by the General Assembly. \*\* Provisional 2025 data: 59 requests cleared and 19 under review at the time of drafting.</p>
+    </ReportSection>
+  </AtAGlanceSection>
+  <KeyMomentsSection>
+    <ReportSection id="moments">
+      <SectionHeading label="The year" title="Key moments of 2025" />
+      <div className="ar-m-a-grid">
+        <TimelineItem
+          link={{ className: 'ar-m-a-item', href: '#unctad16' }}
+          dateProps={{ className: 'ar-m-a-mo ar-red' }}
+          date={<>OCT</>}
+          title={
+            <>
+              <p>UNCTAD16 and the Geneva Consensus</p>
+            </>
+          }
+        >
+          <p> Member States adopt a four-year mandate at the first Geneva conference since 1964.</p>
+        </TimelineItem>
+        <TimelineItem
+          link={{ className: 'ar-m-a-item' }}
+          dateProps={{ className: 'ar-m-a-mo ar-blue' }}
+          date={<>ALL YEAR</>}
+          title={
+            <>
+              <p>Rapid response to tariff volatility</p>
+            </>
+          }
+        >
+          <p> Dashboards, Global Trade Updates and rapid assessments provided member States with real-time analysis.</p>
+        </TimelineItem>
+        <TimelineItem
+          link={{ className: 'ar-m-a-item', href: 'https://unctad.org/unctad-at-ffd4', rel: 'noopener', target: '_blank' }}
+          dateProps={{ className: 'ar-m-a-mo ar-blue' }}
+          date={<>JUL</>}
+          title={
+            <>
+              <p>4th International Conference on Financing for Development</p>
+            </>
+          }
+        >
+          <p> UNCTAD co-led several initiatives under the Sevilla Platform for Action.</p>
+        </TimelineItem>
+        <TimelineItem
+          link={{
+            className: 'ar-m-a-item',
+            href: 'https://unctad.org/osgstatement/3rd-un-conference-landlocked-developing-countries-high-level-thematic-round-table-2',
+            rel: 'noopener',
+            target: '_blank',
+          }}
+          dateProps={{ className: 'ar-m-a-mo ar-blue' }}
+          date={<>AUG</>}
+          title={
+            <>
+              <p>3rd UN Conference on Landlocked Developing Countries</p>
+            </>
+          }
+        >
+          <p> In Awaza: advocating integration, digitalization and trade facilitation.</p>
+        </TimelineItem>
+        <TimelineItem
+          link={{
+            className: 'ar-m-a-item',
+            href: 'https://unctad.org/news/new-global-trade-deal-protects-fish-stocks-and-coastal-jobs',
+            rel: 'noopener',
+            target: '_blank',
+          }}
+          dateProps={{ className: 'ar-m-a-mo ar-blue' }}
+          date={<>SEP</>}
+          title={
+            <>
+              <p>WTO Agreement on Fisheries Subsidies</p>
+            </>
+          }
+        >
+          <p> UNCTAD to support implementation of the new global agreement.</p>
+        </TimelineItem>
+        <TimelineItem
+          link={{ className: 'ar-m-a-item', href: 'https://unctad.org/unctad-at-cop30', rel: 'noopener', target: '_blank' }}
+          dateProps={{ className: 'ar-m-a-mo ar-blue' }}
+          date={<>NOV</>}
+          title={<>UNCTAD at COP30, Belém</>}
+        >
+          <p>UNCTAD brought the trade and development perspective to the UN climate conference.</p>
+        </TimelineItem>
+        <TimelineItem
+          link={{
+            className: 'ar-m-a-item',
+            href: 'https://unctad.org/publication/united-nations-principles-consumer-product-safety',
+            rel: 'noopener',
+            target: '_blank',
+          }}
+          dateProps={{ className: 'ar-m-a-mo ar-blue' }}
+          date={<>DEC</>}
+          title={
+            <>
+              <p>UN Principles for Consumer Product Safety</p>
+            </>
+          }
+        >
+          <p> Adopted by the General Assembly; UNCTAD to lead global implementation.</p>
+        </TimelineItem>
+      </div>
+      <PublicationCarousel
+        title="Flagship publications of 2025"
+        description="Explore UNCTAD’s flagship publications from 2025."
+        previousLabel="Previous publications"
+        nextLabel="Next publications"
+      >
+        <PublicationCard
+          link={{
+            className: 'ar-pubcard',
+            href: 'https://unctad.org/publication/world-investment-report-2025',
+            target: '_blank',
+            rel: 'noopener',
+          }}
+          coverProps={{ className: 'ar-pc-cover' }}
+          cover={
+            <>
+              <img
+                src={resolveAsset('assets/img/publication-world-investment-report-2025.jpg')}
+                alt="Cover: World Investment Report 2025"
+                loading="lazy"
+              />
+            </>
+          }
+          title={<>World Investment Report 2025</>}
+          subtitle={
+            <>
+              <p>International Investment in the Digital Economy</p>
+            </>
+          }
+        ></PublicationCard>
+        <PublicationCard
+          link={{
+            className: 'ar-pubcard',
+            href: 'https://unctad.org/publication/trade-and-development-report-2025',
+            target: '_blank',
+            rel: 'noopener',
+          }}
+          coverProps={{ className: 'ar-pc-cover' }}
+          cover={
+            <>
+              <img
+                src={resolveAsset('assets/img/publication-trade-and-development-report-2025.jpg')}
+                alt="Cover: Trade and Development Report 2025"
+                loading="lazy"
+              />
+            </>
+          }
+          title={
+            <>
+              <p>Trade and Development Report 2025</p>
+            </>
+          }
+          subtitle={
+            <>
+              <p>On the Brink – Trade, Finance and the Reshaping of the Global Economy</p>
+            </>
+          }
+        ></PublicationCard>
+        <PublicationCard
+          link={{
+            className: 'ar-pubcard',
+            href: 'https://unctad.org/publication/technology-and-innovation-report-2025',
+            target: '_blank',
+            rel: 'noopener',
+          }}
+          coverProps={{ className: 'ar-pc-cover' }}
+          cover={
+            <>
+              <img
+                src={resolveAsset('assets/img/publication-technology-and-innovation-report-2025.jpg')}
+                alt="Cover: Technology and Innovation Report 2025"
+                loading="lazy"
+              />
+            </>
+          }
+          title={
+            <>
+              <p>Technology and Innovation Report 2025</p>
+            </>
+          }
+          subtitle={
+            <>
+              <p>Inclusive Artificial Intelligence for Development</p>
+            </>
+          }
+        ></PublicationCard>
+        <PublicationCard
+          link={{
+            className: 'ar-pubcard',
+            href: 'https://unctad.org/publication/review-maritime-transport-2025',
+            target: '_blank',
+            rel: 'noopener',
+          }}
+          coverProps={{ className: 'ar-pc-cover' }}
+          cover={
+            <>
+              <img
+                src={resolveAsset('assets/img/publication-review-of-maritime-transport-2025.jpg')}
+                alt="Cover: Review of Maritime Transport 2025"
+                loading="lazy"
+              />
+            </>
+          }
+          title={
+            <>
+              <p>Review of Maritime Transport 2025</p>
+            </>
+          }
+          subtitle={
+            <>
+              <p>Staying the Course in Turbulent Waters</p>
+            </>
+          }
+        ></PublicationCard>
+        <PublicationCard
+          link={{
+            className: 'ar-pubcard',
+            href: 'https://unctad.org/publication/economic-development-africa-report-2024',
+            target: '_blank',
+            rel: 'noopener',
+          }}
+          coverProps={{ className: 'ar-pc-cover' }}
+          cover={
+            <>
+              <img
+                src={resolveAsset('assets/img/publication-economic-development-in-africa-report-2024.jpg')}
+                alt="Cover: Economic Development in Africa Report 2024"
+                loading="lazy"
+              />
+            </>
+          }
+          title={
+            <>
+              <p>Economic Development in Africa Report 2024</p>
+            </>
+          }
+          subtitle={
+            <>
+              <p>
+                Unlocking Africa’s Trade Potential: Boosting Regional Markets and Reducing Risks – launched in Abidjan in February 2025
+              </p>
+            </>
+          }
+        ></PublicationCard>
+        <PublicationCard
+          link={{
+            className: 'ar-pubcard',
+            href: 'https://unctad.org/publication/trade-and-development-foresights-2025-under-pressure-uncertainty-reshapes-global',
+            target: '_blank',
+            rel: 'noopener',
+          }}
+          coverProps={{ className: 'ar-pc-cover' }}
+          cover={
+            <>
+              <img
+                src={resolveAsset('assets/img/publication-trade-and-development-foresights-2025.jpg')}
+                alt="Cover: Trade and Development Foresights 2025"
+                loading="lazy"
+              />
+            </>
+          }
+          title={
+            <>
+              <p>Trade and Development Foresights 2025</p>
+            </>
+          }
+          subtitle={
+            <>
+              <p>Under Pressure – Uncertainty Reshapes Global Economic Prospects</p>
+            </>
+          }
+        ></PublicationCard>
+        <PublicationCard
+          link={{
+            className: 'ar-pubcard',
+            href: 'https://unctad.org/publication/world-of-debt',
+            target: '_blank',
+            rel: 'noopener',
+          }}
+          coverProps={{ className: 'ar-pc-cover' }}
+          cover={
+            <>
+              <img
+                src={resolveAsset('assets/img/publication-a-world-of-debt-2025.jpg')}
+                alt="Cover: A World of Debt 2025"
+                loading="lazy"
+              />
+            </>
+          }
+          title={<>A World of Debt 2025</>}
+        ></PublicationCard>
+        <PublicationCard
+          link={{
+            className: 'ar-pubcard',
+            href: 'https://unctad.org/publication/state-commodity-dependence-2025',
+            target: '_blank',
+            rel: 'noopener',
+          }}
+          coverProps={{ className: 'ar-pc-cover' }}
+          cover={
+            <>
+              <img
+                src={resolveAsset('assets/img/publication-the-state-of-commodity-dependence-2025.jpg')}
+                alt="Cover: The State of Commodity Dependence 2025"
+                loading="lazy"
+              />
+            </>
+          }
+          title={
+            <>
+              <p>The State of Commodity Dependence 2025</p>
+            </>
+          }
+        ></PublicationCard>
+        <PublicationCard
+          link={{
+            className: 'ar-pubcard ar-pc-gtu',
+            href: 'https://unctad.org/topic/trade-analysis',
+            target: '_blank',
+            rel: 'noopener',
+          }}
+          coverProps={{ className: 'ar-pc-cover ar-gtu' }}
+          cover={
+            <>
+              <svg viewBox="76 108 212 210" aria-hidden="true">
+                <path fill="#fff" d="M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z" />
+              </svg>
+              <b>Global Trade Update</b>
+              <i>now monthly</i>
+            </>
+          }
+          title={<>Global Trade Update</>}
+          subtitle={
+            <>
+              <p>Now monthly, with analysis of import and export trends across regions and sectors</p>
+            </>
+          }
+        ></PublicationCard>
+      </PublicationCarousel>
+    </ReportSection>
+  </KeyMomentsSection>
+  <ProjectsSection>
+    <section id="projects" className="ar-tc">
+      <div className="ar-container">
+        <SectionLabel>{'Technical cooperation'}</SectionLabel>
+        <h2>Where research becomes results</h2>
+        <p className="ar-tc-lead">UNCTAD turns research and policy expertise into practical support for developing countries – from building productive capacities and managing debt to promoting investment and entrepreneurship, reducing commodity dependence, modernizing customs and transport systems and harnessing digital transformation. In 2025, its technical cooperation programmes delivered results in more than 100 countries and territories.</p>
+        <div className="ar-tc-stats">
+          <Statistic
+            className="ar-tc-stat"
+            value={
+              <>
+                <AnimatedNumber value={100} decimals={0} />
+              </>
+            }
+          >
+            <p>More than 100 countries and territories reached</p>
+          </Statistic>
+          <Statistic
+            className="ar-tc-stat ar-alt"
+            value={
+              <>
+                <span className="ar-u">$</span>
+                <AnimatedNumber value={58.9} decimals={1} />
+                <span className="ar-u"> million</span>
+              </>
+            }
+          >
+            <p>in technical cooperation expenditure</p>
+          </Statistic>
+          <Statistic
+            className="ar-tc-stat"
+            value={
+              <>
+                <AnimatedNumber value={203} decimals={0} />
+              </>
+            }
+          >
+            <p>technical cooperation projects in 2025</p>
+          </Statistic>
+          <Statistic
+            className="ar-tc-stat ar-alt"
+            value={
+              <>
+                <AnimatedNumber value={43} decimals={0} />
+              </>
+            }
+          >
+            <p>projects for least developed countries</p>
+          </Statistic>
+        </div>
+        <h3 className="ar-tc-sub">Results, in the report’s own numbers</h3>
+        <p className="ar-tc-note">Selected outcomes from projects featured in the Annual Report 2025.</p>
+        <div className="ar-imp-grid">
+          <ResultCard
+            style={{ '--ic': 'var(--un-blue-dark)' }}
+            image={{
+              src: resolveAsset('assets/img/results-card-afghanistan.jpg'),
+              alt: 'Trader in a textile shop, Afghanistan',
+              loading: 'lazy',
+            }}
+            value={
+              <>
+                {'93'} <span>%</span>
+              </>
+            }
+            country={<>Afghanistan</>}
+          >
+            <p>reduction in physical paperwork for exemption consignments</p>
+          </ResultCard>
+          <ResultCard
+            style={{ '--ic': 'var(--dv-green)' }}
+            image={{ src: resolveAsset('assets/img/results-card-eswatini.jpg'), alt: 'Young woman, southern Africa', loading: 'lazy' }}
+            value={
+              <>
+                {'69'} <span>%</span>
+              </>
+            }
+            country={<>Eswatini</>}
+          >
+            <p>reduction in customs processing time, 2021–2025</p>
+          </ResultCard>
+          <ResultCard
+            style={{ '--ic': 'var(--un-blue)' }}
+            image={{
+              src: resolveAsset('assets/img/results-card-gambia.jpg'),
+              alt: 'Fishermen landing the catch, West Africa',
+              loading: 'lazy',
+            }}
+            value={
+              <>
+                {'96'} <span>%</span>
+              </>
+            }
+            country={<>The Gambia</>}
+          >
+            <p>growth in customs revenue since implementation of ASYCUDAWorld in 2022 (+21% in 2024–2025)</p>
+          </ResultCard>
+          <ResultCard
+            style={{ '--ic': 'var(--dv-orange)' }}
+            image={{ src: resolveAsset('assets/img/results-card-iraq.jpg'), alt: 'Street and mosque, Baghdad', loading: 'lazy' }}
+            value={
+              <>
+                {'25'} <span>%</span>
+              </>
+            }
+            country={<>Iraq</>}
+          >
+            <p>increase in customs revenue, 2024–2025</p>
+          </ResultCard>
+          <ResultCard
+            style={{ '--ic': 'var(--dv-red)' }}
+            image={{
+              src: resolveAsset('assets/img/results-card-turkmenistan.jpg'),
+              alt: 'Stacked shipping containers',
+              loading: 'lazy',
+            }}
+            value={
+              <>
+                {'90'} <span>%</span>
+              </>
+            }
+            country={<>Turkmenistan</>}
+          >
+            <p>increase in rail container traffic, 2024–2025</p>
+          </ResultCard>
+        </div>
+        <p className="ar-tsm-credits ar-tsm-credits--results">Photographs: Shutterstock. Images are illustrative of each project’s country and sector.</p>
+        <p className="ar-imp-cta">
+          {'Want to partner with UNCTAD? '}
+          <a href="https://unctad.org/projects" target="_blank" rel="noopener">Explore opportunities ›</a>
+        </p>
+        <h3 className="ar-tc-sub">An integrated toolbox</h3>
+        <p className="ar-tc-note">The report describes UNCTAD’s technical cooperation as combining “cutting-edge data, digital and policy solutions and institutional support”. Three flagship programmes are central to that delivery.</p>
+        <div className="ar-tc-flags">
+          <div className="ar-flag">
+            <button
+              className="ar-flag-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="ar-asycuda-details"
+              aria-labelledby="ar-asycuda-name ar-asycuda-title"
+            >
+              <span className="ar-fabbr" id="ar-asycuda-name">ASYCUDA</span>
+              <span className="ar-flag-title" id="ar-asycuda-title">Customs automation</span>
+            </button>
+            <span className="ar-ftag">Present in 103 countries and territories, including 37 LDCs.</span>
+            <span className="ar-fmore" id="ar-asycuda-details" aria-hidden="true" inert>
+              <span className="ar-flag-content">
+                <span className="ar-flag-description">In 2025, the programme generated $29.7 million through 38 new and extension projects and trained more than 3,000 government officials and private sector operators.</span>
+                <span className="ar-freach">
+                  <b>103</b>
+                  <span>countries and territories</span>
+                </span>
+              </span>
+            </span>
+            <span className="ar-fcue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 15.5 4.5 8l1.4-1.4L12 12.7l6.1-6.1L19.5 8z" />
+              </svg>
+              <span className="ar-txt" />
+            </span>
+          </div>
+          <div className="ar-flag ar-d">
+            <button
+              className="ar-flag-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="ar-dmfas-details"
+              aria-labelledby="ar-dmfas-name ar-dmfas-title"
+            >
+              <span className="ar-fabbr" id="ar-dmfas-name">DMFAS</span>
+              <span className="ar-flag-title" id="ar-dmfas-title">Debt management</span>
+            </button>
+            <span className="ar-ftag">Operating in 63 countries, including 24 LDCs.</span>
+            <span className="ar-fmore" id="ar-dmfas-details" aria-hidden="true" inert>
+              <span className="ar-flag-content">
+                <span className="ar-flag-description">DMFAS 7, the next generation of UNCTAD’s debt management software, launched in 2025, strengthening countries’ capacity to record, monitor and analyse public debt.</span>
+                <span className="ar-freach">
+                  <b>63</b>
+                  <span>DMFAS operating in 63 countries</span>
+                </span>
+              </span>
+            </span>
+            <span className="ar-fcue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 15.5 4.5 8l1.4-1.4L12 12.7l6.1-6.1L19.5 8z" />
+              </svg>
+              <span className="ar-txt" />
+            </span>
+          </div>
+          <div className="ar-flag ar-g">
+            <button
+              className="ar-flag-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="ar-empretec-details"
+              aria-labelledby="ar-empretec-name ar-empretec-title"
+            >
+              <span className="ar-fabbr" id="ar-empretec-name">EMPRETEC</span>
+              <span className="ar-flag-title" id="ar-empretec-title">Entrepreneurship</span>
+            </button>
+            <span className="ar-ftag">More than 550,000 entrepreneurs trained in more than 40 countries.</span>
+            <span className="ar-fmore" id="ar-empretec-details" aria-hidden="true" inert>
+              <span className="ar-flag-content">
+                <span className="ar-flag-description">Empretec equips entrepreneurs in the global South with business skills and access to funding and networks, turning ideas into viable enterprises.</span>
+                <span className="ar-freach">
+                  <b>550,000</b>
+                  <span>More than 550,000 entrepreneurs trained</span>
+                </span>
+              </span>
+            </span>
+            <span className="ar-fcue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 15.5 4.5 8l1.4-1.4L12 12.7l6.1-6.1L19.5 8z" />
+              </svg>
+              <span className="ar-txt" />
+            </span>
+          </div>
+        </div>
+        <h3 className="ar-tc-sub ar-tc-sub--spaced" id="project-map-title">Projects around the world</h3>
+        <p className="ar-tc-note">Explore UNCTAD technical cooperation projects by country.</p>
+        <div className="ar-tc-mapfull">
+          <ProjectMap
+            countries={countryProjects.countries}
+            labels={projectMapLabels}
+            settings={projectMapSettings}
+            description="World map showing countries and territories in the 2025 country project listing. Search or focus a marker to explore its projects."
+            summary={
+              <div>
+                <div className="ar-tp-kick">
+                  <p>Technical cooperation projects, 2025</p>
+                </div>
+                <p className="ar-tp-hint">
+                  Search for a country or click a red marker to read its projects and division/programme codes.
+                </p>
+                <div className="ar-tp-scale">
+                  <div>
+                    <span className="ar-tp-n">{countryProjects.countries.length}</span>
+                    <span className="ar-tp-l">countries and territories</span>
+                  </div>
+                  <div>
+                    <span className="ar-tp-n">
+                      {countryProjects.countries.reduce((total, country) => total + country.projects.length, 0)}
+                    </span>
+                    <span className="ar-tp-l">projects listed</span>
+                  </div>
+                </div>
+              </div>
+            }
+          ></ProjectMap>
+          <div className="ar-container ar-tc-map-foot">
+            <div className="ar-tc-legend">
+              <span className="ar-lg-it">
+                <i className="ar-sw-proj" />
+                {'Country or territory with a project in the 2025 country listing'}
+              </span>
+              <span className="ar-lg-it ar-lg-note">The map shows the supplied country-level project listing; regional and interregional projects are not included.</span>
+            </div>
+            <div className="ar-tc-blue-line" />
+            <p className="ar-tc-src">
+              <em>Source:</em>
+              {
+                ' UN Trade and Development, countries_only_sheet1.xlsx, “Projects by country”. Project titles and division/programme codes follow the source. Antarctica excluded.'
+              }
+            </p>
+            <p className="ar-tc-disc">
+              {
+                'The boundaries and names shown and the designations used on this map do not imply official endorsement or acceptance by the United Nations. See the '
+              }
+              <a href="https://unctad.org/map-disclaimer">map disclaimer</a>
+              {'.'}
+            </p>
+            <div className="ar-tag-legend ar-tag-legend--divisions" hidden={!projectMapSettings.showDivisions}>
+              <b>Division abbreviations:</b>
+              {
+                ' ALDC – Division for Africa, Least Developed Countries and Special Programmes · DIAE – Division on Investment and Enterprise · DITC – Division on International Trade and Commodities · DTL – Division on Technology and Logistics · GDS – Division on Globalization and Development Strategies · OSG – Office of the Secretary-General · STAT – UNCTAD Statistics'
+              }
+            </div>
+          </div>
+        </div>
+        <h3 className="ar-tc-sub ar-tc-sub--spaced">In their words</h3>
+        <div className="ar-tsm-grid">
+          <TestimonialCard
+            name="Gael Grooby"
+            image={resolveAsset('assets/img/testimonial-gael-grooby.jpg')}
+            role={
+              <>
+                Acting Director, Tariff and Trade Affairs,
+                <br />
+                World Customs Organization
+              </>
+            }
+            date="Letter of 19 February 2025"
+            accent="var(--un-blue-dark)"
+          >
+            <p>“Your valuable support, alongside the esteemed support of UNCTAD for the WCO and its initiatives is deeply appreciated…”</p>
+          </TestimonialCard>
+          <TestimonialCard
+            name="H.E. Ms. Kadra Ahmed Hassan"
+            image={resolveAsset('assets/img/testimonial-kadra-ahmed-hassan.jpg')}
+            role={
+              <>
+                Ambassador and Permanent Representative,
+                <br />
+                Republic of Djibouti
+              </>
+            }
+            date="Letter of 7 May 2025"
+            accent="var(--un-blue)"
+          >
+            <p>“On behalf of the World Trade Organization (WTO) LDC Group, I would like to express our sincere appreciation for the longstanding and strategic support provided by UNCTAD in strengthening the voice and negotiating capacity of LDC delegates at the WTO.”</p>
+          </TestimonialCard>
+          <TestimonialCard
+            name="H.E. Mr. Julien Paluku Kahongya"
+            image={resolveAsset('assets/img/testimonial-julien-paluku-kahongya.jpg')}
+            imageAlt="H.E. M. Julien Paluku Kahongya"
+            role={
+              <>
+                Minister of Foreign Trade,
+                <br />
+                Democratic Republic of the Congo
+              </>
+            }
+            date="Letter of 19 July 2025"
+            accent="var(--dv-red)"
+            quoteLanguage="fr"
+            translation={
+              <p className="ar-tsm-trans ar-tsm-trans--translation">
+                [Translation: “On behalf of the Government, I appreciate UNCTAD’s commitment to mobilizing its expertise and engaging
+                its technical and financial partners to support the Democratic Republic of the Congo in this ambitious economic
+                diversification programme…”]
+              </p>
+            }
+          >
+            <p>“J’apprécie au nom du Gouvernement l’engagement de la CNUCED à mobiliser son expertise et à recourir à ses partenaires techniques et financiers pour accompagner la République Démocratique du Congo dans cet ambitieux programme de la diversification économique…”</p>
+          </TestimonialCard>
+        </div>
+        <p className="ar-tsm-credits">Portraits: Kadra Ahmed Hassan – © UN Trade and Development / Jean Marc Ferré (CC BY-SA 2.0) · Julien Paluku Kahongya – Ministère du Commerce Extérieur, RDC · Gael Grooby – World Customs Organization.</p>
+      </div>
+    </section>
+  </ProjectsSection>
+  <DonorsSection groups={donorGroups} total={donorTotal}>
+    <section id="donors" className="ar-dn">
+      <div className="ar-dn-hero">
+        <div className="ar-bgimg" aria-hidden="true" />
+        <div className="ar-container">
+          <SectionLabel>{'Donors and partners'}</SectionLabel>
+          <h2>Powered by partnership</h2>
+          <p className="ar-dn-lead">Voluntary contributions from governments, international organizations and regional institutions supported UNCTAD’s work in 2025.</p>
+          <div className="ar-dn-hero-figs">
+            <div>
+              <div className="ar-k">
+                <span className="ar-u">$</span>
+                <AnimatedNumber value={54} decimals={0} />
+                <span className="ar-u"> million</span>
+              </div>
+              <div className="ar-l">
+                <p>in voluntary contributions received in 2025</p>
+              </div>
+            </div>
+            <div className="ar-amber">
+              <div className="ar-k">
+                <span className="ar-u">$</span>
+                <AnimatedNumber value={54.4} decimals={1} />
+                <span className="ar-u"> million</span>
+              </div>
+              <div className="ar-l">
+                <p>in total extrabudgetary expenditures in 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="ar-container ar-dn-block">
+        <div className="ar-dn-two">
+          <div>
+            <SectionLabel>{'Where the funding comes from'}</SectionLabel>
+            <h3>Voluntary contributions by contributor group</h3>
+            <p className="ar-dsub">Voluntary contributions, by contributor group, millions of dollars and percentage share, 2025.</p>
+            <DonorLegend groups={donorGroups} />
+          </div>
+          <div className="ar-dn-donut" id="dnDonut">
+            <svg viewBox="0 0 220 220" aria-hidden="true" />
+            <DonorTotal total={donorTotal} />
+          </div>
+        </div>
+      </div>
+      <div className="ar-container ar-dn-block">
+        <SectionLabel>{'Where the funding goes'}</SectionLabel>
+        <h3>Extrabudgetary expenditure by region</h3>
+        <p className="ar-dsub">Extrabudgetary expenditure, by region, millions of dollars and percentage share, 2025.</p>
+        <div className="ar-dn-bars" id="dnBars">
+          <FundingBar label={<>Interregional</>} fillProps={{ className: 'ar-bfill', 'data-pct': '31.8' }}>
+            {'31.8%'}
+            <span className="ar-bamt">$17.3 million</span>
+          </FundingBar>
+          <FundingBar label={<>Africa</>} fillProps={{ className: 'ar-bfill', 'data-pct': '28.0' }}>
+            {'28.0%'}
+            <span className="ar-bamt">$15.2 million</span>
+          </FundingBar>
+          <FundingBar label={<>Asia</>} fillProps={{ className: 'ar-bfill', 'data-pct': '21.7' }}>
+            {'21.7%'}
+            <span className="ar-bamt">$11.8 million</span>
+          </FundingBar>
+          <FundingBar label={<>Latin America and the Caribbean</>} fillProps={{ className: 'ar-bfill', 'data-pct': '8.4' }}>
+            {'8.4%'}
+            <span className="ar-bamt">$4.5 million</span>
+          </FundingBar>
+          <FundingBar label={<>Oceania</>} fillProps={{ className: 'ar-bfill', 'data-pct': '6.8' }}>
+            {'6.8%'}
+            <span className="ar-bamt">$3.7 million</span>
+          </FundingBar>
+          <FundingBar label={<>Europe</>} fillProps={{ className: 'ar-bfill', 'data-pct': '3.3' }}>
+            {'3.3%'}
+            <span className="ar-bamt">$1.8 million</span>
+          </FundingBar>
+          <FundingBar label={<>North America</>} fillProps={{ className: 'ar-bfill', 'data-pct': '0.1' }}>
+            {'0.1%'}
+            <span className="ar-bamt">$0.03 million</span>
+          </FundingBar>
+        </div>
+      </div>
+      <div className="ar-container ar-dn-block">
+        <SectionLabel>{'Top 10 contributors'}</SectionLabel>
+        <h3>Top voluntary contributors in 2025</h3>
+        <p className="ar-dsub">Voluntary contributions, excluding self-financed projects.</p>
+        <div className="ar-dn-key">
+          <span>
+            <i className="ar-dn-swatch--developing" />
+            {'Developing economy'}
+          </span>
+          <span>
+            <i className="ar-dn-swatch--developed" />
+            {'Developed economy'}
+          </span>
+          <span>
+            <i className="ar-dn-swatch--organizations" />
+            {'International organization'}
+          </span>
+        </div>
+        <div className="ar-dn-bubbles" id="dnBubbles">
+          <ContributorBubble className="ar-bub ar-dev" style={{ '--d': '118px' }} rank={<>1</>} amount={<>$4 million</>}>
+            {' China '}
+          </ContributorBubble>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '116px' }} rank={<>2</>} amount={<>$3.8 million</>}>
+            {' European Union '}
+          </ContributorBubble>
+          <ContributorBubble className="ar-bub ar-dvd" style={{ '--d': '103px' }} rank={<>3</>} amount={<>$3 million</>}>
+            {' Netherlands '}
+          </ContributorBubble>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '81px' }} rank={<>4</>} amount={<>$3 million</>}>
+            {' UN Development Programme '}
+          </ContributorBubble>
+          <ContributorBubble className="ar-bub ar-dvd" style={{ '--d': '81px' }} rank={<>5</>} amount={<>$1.9 million</>}>
+            {' Switzerland '}
+          </ContributorBubble>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '70px' }} rank={<>6</>} amount={<>$1.4 million</>}>
+            {' TradeMark Africa '}
+          </ContributorBubble>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '70px' }} rank={<>7</>} amount={<>$1.4 million</>}>
+            {' African Development Bank '}
+          </ContributorBubble>
+          <ContributorBubble className="ar-bub ar-dvd" style={{ '--d': '70px' }} rank={<>8</>} amount={<>$1.4 million</>}>
+            {' United Kingdom '}
+          </ContributorBubble>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '68px' }} rank={<>9</>} amount={<>$1.3 million</>}>
+            <p>UN Multi-Partner Trust Fund Office</p>
+          </ContributorBubble>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '60px' }} rank={<>10</>} amount={<>$1 million</>}>
+            <p>UN Department of Economic and Social Affairs</p>
+          </ContributorBubble>
+        </div>
+      </div>
+    </section>
+  </DonorsSection>
+  <CommunicationsSection>
+    <section id="comms" className="ar-cm">
+      <div className="ar-container">
+        <SectionLabel>{'Communications'}</SectionLabel>
+        <h2>Reaching further, in more languages</h2>
+        <p className="ar-cm-lead">In 2025, UNCTAD expanded its communications across more channels and languages, reaching wider audiences through its own platforms and partners.</p>
+        <div className="ar-cm-amp">
+          <div className="ar-cm-side">
+            <div className="ar-cm-n">
+              <AnimatedNumber value={7.3} decimals={1} />
+              <span className="ar-cm-unit"> million</span>
+            </div>
+            <div className="ar-cm-l">
+              <p>people reached through UNCTAD’s own channels</p>
+            </div>
+          </div>
+          <div className="ar-cm-wave" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <div className="ar-cm-x">14× the reach through partners</div>
+          </div>
+          <div className="ar-cm-side ar-cm-big">
+            <div className="ar-cm-n">
+              <AnimatedNumber value={104} decimals={0} />
+              <span className="ar-cm-unit"> million</span>
+            </div>
+            <div className="ar-cm-l">
+              <p>people reached through UN News and government partner channels</p>
+            </div>
+          </div>
+        </div>
+        <div className="ar-cm-rows" id="cmRows">
+          <div className="ar-cm-row">
+            <span className="ar-ch">Social media</span>
+            <span>
+              <span className="ar-fig">
+                <AnimatedNumber value={138200} decimals={0} />
+              </span>
+              <span className="ar-txt">
+                <span className="ar-inline-paragraph">new followers – a 21% increase – interactions up 18%</span>
+              </span>
+            </span>
+          </div>
+          <div className="ar-cm-row">
+            <span className="ar-ch">Video</span>
+            <span>
+              <span className="ar-fig">
+                <AnimatedNumber value={653} decimals={0} />
+              </span>
+              <span className="ar-txt">
+                <span className="ar-inline-paragraph">multilingual videos in ten languages – an 81% increase compared with 2024 – nearly 1 million views</span>
+              </span>
+            </span>
+          </div>
+          <div className="ar-cm-row">
+            <span className="ar-ch">Newsletter</span>
+            <span>
+              <span className="ar-fig">
+                <AnimatedNumber value={68546} decimals={0} />
+              </span>
+              <span className="ar-txt">
+                {'subscribers to '}
+                <b>UNCTAD Insights</b>
+                {', launched in June 2025'}
+              </span>
+            </span>
+          </div>
+          <div className="ar-cm-row">
+            <span className="ar-ch">Website</span>
+            <span>
+              <span className="ar-fig">
+                <AnimatedNumber value={8.17} decimals={2} />
+                <span className="ar-u">million</span>
+              </span>
+              <span className="ar-txt">
+                <span className="ar-inline-paragraph">views on unctad.org – up 15% from 2024 – publication page views up 13%</span>
+              </span>
+            </span>
+          </div>
+          <div className="ar-cm-row">
+            <span className="ar-ch">Downloads</span>
+            <span>
+              <span className="ar-fig">
+                <AnimatedNumber value={1068194} decimals={0} />
+              </span>
+              <span className="ar-txt">
+                <span className="ar-inline-paragraph">flagship-report downloads – up 18.4%</span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <p className="ar-cm-note">
+          {'Also in 2025: '}
+          <b>39</b>
+          {' livestream sessions · nearly '}
+          <b>7,000</b>
+          {' posts · '}
+          <b>18,000</b>
+          {' new LinkedIn followers.'}
+        </p>
+      </div>
+    </section>
+  </CommunicationsSection>
+  <ExploreSection>
+    <ReportSection id="explore">
+      <SectionHeading label="Explore" title="Go deeper into the report" />
+      <div className="ar-xp-grid" id="xpGrid">
+        <ExploreTile
+          link={{
+            className: 'ar-xp-tile',
+            href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=10',
+            style: { '--bx': '0%', '--by': '0%', '--tc': '#0077B8' },
+          }}
+          number={<>01</>}
+          title={<>Leadership and UN reform</>}
+        >
+          {'Read this section ›'}
+        </ExploreTile>
+        <ExploreTile
+          link={{
+            className: 'ar-xp-tile',
+            href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=22',
+            style: { '--bx': '50%', '--by': '0%', '--tc': '#009EDB' },
+          }}
+          number={<>02</>}
+          title={<>Consensus-building with member States</>}
+        >
+          {'Read this section ›'}
+        </ExploreTile>
+        <ExploreTile
+          link={{
+            className: 'ar-xp-tile',
+            href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=46',
+            style: { '--bx': '100%', '--by': '0%', '--tc': '#A05FB4' },
+          }}
+          number={<>03</>}
+          title={<>Productive capacities and LDC graduation</>}
+        >
+          {'Read this section ›'}
+        </ExploreTile>
+        <ExploreTile
+          link={{
+            className: 'ar-xp-tile',
+            href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=54',
+            style: { '--bx': '0%', '--by': '50%', '--tc': '#ED1847' },
+          }}
+          number={<>04</>}
+          title={<>Debt, finance and the global economy</>}
+        >
+          {'Read this section ›'}
+        </ExploreTile>
+        <ExploreTile
+          link={{
+            className: 'ar-xp-tile',
+            href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=60',
+            style: { '--bx': '50%', '--by': '50%', '--tc': '#F58220' },
+          }}
+          number={<>05</>}
+          title={<>Making trade work for development</>}
+        >
+          {'Read this section ›'}
+        </ExploreTile>
+        <ExploreTile
+          link={{
+            className: 'ar-xp-tile',
+            href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=66',
+            style: { '--bx': '100%', '--by': '50%', '--tc': '#FBAF17' },
+          }}
+          number={<>06</>}
+          title={<>Investment for sustainable development</>}
+        >
+          {'Read this section ›'}
+        </ExploreTile>
+        <ExploreTile
+          link={{
+            className: 'ar-xp-tile',
+            href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=72',
+            style: { '--bx': '0%', '--by': '100%', '--tc': '#72BF44' },
+          }}
+          number={<>07</>}
+          title={<>Technology, logistics and trade facilitation</>}
+        >
+          {'Read this section ›'}
+        </ExploreTile>
+        <ExploreTile
+          link={{
+            className: 'ar-xp-tile',
+            href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=80',
+            style: { '--bx': '50%', '--by': '100%', '--tc': '#7BB7E1' },
+          }}
+          number={<>08</>}
+          title={<>Data, statistics and the Beyond GDP agenda</>}
+        >
+          {'Read this section ›'}
+        </ExploreTile>
+        <ExploreTile
+          link={{
+            className: 'ar-xp-tile',
+            href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=86',
+            style: { '--bx': '100%', '--by': '100%', '--tc': '#004987' },
+          }}
+          number={<>09</>}
+          title={<>UNCTAD at the United Nations in New York</>}
+        >
+          {'Read this section ›'}
+        </ExploreTile>
+      </div>
+      <p className="ar-xp-credit">Photograph: Shutterstock.</p>
+      <div className="ar-xp-dl">
+        <a className="ar-button-pill ar-active" href="https://unctad.org/system/files/official-document/osg2026d1_en.pdf">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
+          </svg>
+          {'Download the full report (PDF)'}
+        </a>
+      </div>
+    </ReportSection>
+  </ExploreSection>
+</main>

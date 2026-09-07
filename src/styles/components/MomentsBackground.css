@@ -1,0 +1,21 @@
+#app-root-2026-annual_report :where(.annual-report-app) #moments {
+  position: relative;
+  background: var(--bg-pale);
+  overflow: hidden;
+}
+#app-root-2026-annual_report :where(.annual-report-app) #moments::before {
+  content: '2025';
+  position: absolute;
+  z-index: 0;
+  right: -2vw;
+  top: 42%;
+  font: 800 clamp(13rem, 24vw, 22rem) / 1 var(--font);
+  letter-spacing: -0.05em;
+  color: rgba(0, 119, 184, 0.06);
+  pointer-events: none;
+  user-select: none;
+}
+#app-root-2026-annual_report #moments .ar-container {
+  position: relative;
+  z-index: 1;
+}

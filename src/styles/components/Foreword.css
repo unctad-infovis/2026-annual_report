@@ -1,0 +1,88 @@
+#app-root-2026-annual_report .ar-fw-grid {
+  display: grid;
+  grid-template-columns: minmax(290px, 400px) 1fr;
+  gap: clamp(36px, 5.5vw, 90px);
+  align-items: start;
+}
+#app-root-2026-annual_report .ar-fw-photo {
+  position: sticky;
+  top: 28px;
+  margin: 0;
+}
+@media (max-width: 940px) {
+  #app-root-2026-annual_report .ar-fw-grid {
+    grid-template-columns: 1fr;
+  }
+  #app-root-2026-annual_report .ar-fw-photo {
+    max-width: 480px;
+    position: static;
+  }
+}
+#app-root-2026-annual_report .ar-fw-photo .ar-ph-wrap {
+  position: relative;
+}
+#app-root-2026-annual_report .ar-fw-photo .ar-ph-wrap::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  right: -16px;
+  bottom: -16px;
+  background: var(--ramp-blue-6);
+  border-radius: 14px;
+  z-index: 0;
+}
+#app-root-2026-annual_report .ar-fw-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 26px 60px rgba(0, 73, 135, 0.2);
+}
+#app-root-2026-annual_report .ar-ph-credit {
+  position: absolute;
+  z-index: 2;
+  right: 9px;
+  bottom: 12px;
+  writing-mode: vertical-rl;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: #fff;
+  opacity: 0.85;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+#app-root-2026-annual_report .ar-fw-photo figcaption {
+  margin-top: 30px;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+#app-root-2026-annual_report .ar-fw-photo figcaption span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.87rem;
+  color: var(--grey-text);
+  margin-top: 3px;
+}
+#app-root-2026-annual_report .ar-quote {
+  border-left: 0;
+  position: relative;
+  margin: 36px 0;
+  padding: 0 0 0 58px;
+  font-size: 1.55rem;
+  line-height: 1.32;
+  font-weight: 650;
+  color: var(--un-blue-dark);
+}
+#app-root-2026-annual_report .ar-quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 0;
+  top: -16px;
+  font-size: 4.8rem;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--un-blue);
+}

@@ -1,0 +1,44 @@
+{
+  "name": "2026-annual_report",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "postbuild": "node scripts/postbuild.mjs",
+    "start": "vite --open",
+    "start_public": "vite --open --host",
+    "preview": "vite preview",
+    "format": "biome format --write .",
+    "format:article": "node scripts/format-article.mjs",
+    "lint": "biome check . --error-on-warnings",
+    "check:html": "node scripts/verify-semantic-html.mjs --check",
+    "check:a11y": "node scripts/verify-accessibility.mjs && node scripts/verify-programme-disclosures.mjs && node scripts/verify-project-map.mjs",
+    "lint:fix": "biome check --write .",
+    "login": "az login --service-principal -u $AZURE_USER -p $AZURE_PW --tenant $AZURE_TENANT",
+    "push": "git push origin main && git push github main",
+    "sync-gh-pages": "git subtree push --prefix dist github gh-pages",
+    "sync-prod": "azcopy copy \"dist/*\" \"https://${AZURE_STORAGE_NAME}.blob.core.windows.net/\\$web/${npm_package_name}/\" --include-path 'js;css;assets' --recursive --exclude-pattern '.DS_Store'"
+  },
+  "dependencies": {
+    "@unctad-infovis/general-tools": "^1.7.2",
+    "@unctad-infovis/map-tools": "^1.2.2",
+    "@unctad-infovis/unctad-icons": "^1.0.2",
+    "highcharts": "^12.6.0",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.14",
+    "@mdx-js/mdx": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@mdx-js/rollup": "^3.1.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "acorn": "^8.18.0",
+    "acorn-jsx": "^5.3.2",
+    "html-react-parser": "^6.1.7",
+    "postcss": "^8.5.26",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "terser": "^5.0.0",
+    "vite": "^8.0.10"
+  }
+}
