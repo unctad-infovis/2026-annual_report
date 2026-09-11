@@ -5,6 +5,7 @@ import { defineConfig } from 'vite';
 const name = '2026-annual_report';
 
 export default defineConfig(({ command }) => ({
+  base: './',
   build: {
     emptyOutDir: true,
     minify: 'terser',

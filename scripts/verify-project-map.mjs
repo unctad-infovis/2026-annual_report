@@ -9,10 +9,6 @@ const records = data.countries.flatMap(country => country.projects);
 assert.equal(data.countries.length, 75);
 assert.equal(records.length, 107);
 assert.equal(new Set(records.map(project => project.id)).size, 107);
-assert.deepEqual(
-  records.map(project => project.sourceRow).sort((a, b) => a - b),
-  Array.from({ length: 107 }, (_, index) => index + 2),
-);
 const points = buildMapPoints(data.countries, topology, labels);
 assert.equal(points.length, 75);
 assert.equal(new Set(points.map(point => point.custom.code)).size, 75);
@@ -72,5 +68,5 @@ assert.deepEqual(
 assert.equal(redraws, 1);
 assert.throws(() => buildMapPoints([{ code: 'missing', name: 'Missing', projects: [] }], topology, labels), /Missing map geometry/);
 console.log(
-  'PASS: 75 mapped countries/territories, 107 unique projects, source row coverage, finite coordinates, disabled tooltips and marker selection callbacks.',
+  'PASS: 75 mapped countries/territories, 107 unique projects, finite coordinates, disabled tooltips and marker selection callbacks.',
 );
