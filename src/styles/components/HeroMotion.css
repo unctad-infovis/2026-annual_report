@@ -1,33 +1,11 @@
 #app-root-2026-annual_report .ar-hero {
   min-height: 86vh;
 }
-#app-root-2026-annual_report .ar-hero-anim {
-  opacity: 0;
-  transform: translateY(26px);
-  animation: ar-heroUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-#app-root-2026-annual_report .ar-hero-anim.ar-d1 {
-  animation-delay: 0.05s;
-}
-#app-root-2026-annual_report .ar-hero-anim.ar-d2 {
-  animation-delay: 0.2s;
-}
-@keyframes ar-heroUp {
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-#app-root-2026-annual_report .ar-button-pill {
-  transition:
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s,
-    filter 0.2s;
-}
-#app-root-2026-annual_report .ar-button-pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
-  text-decoration: none;
+#app-root-2026-annual_report .container_back_to_top {
+  /* Overrides the vendor package's unprompted 5x bounce (fires 10s after the
+     button appears, with no state to confirm) — self-triggered decorative
+     motion with no purpose. */
+  animation-name: none;
 }
 #app-root-2026-annual_report .ar-sr-only {
   position: absolute;

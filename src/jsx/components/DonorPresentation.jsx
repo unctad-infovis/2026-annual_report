@@ -19,7 +19,7 @@ export const DonorLegend = ({ groups }) => (
 export const DonorTotal = ({ total }) => (
   <div className="ar-dn-center" id="dnCenter" role="status" aria-live="polite" aria-atomic="true">
     <div className="ar-cnum">
-      <span className="ar-u">{total.prefix}</span>
+      {total.prefix}
       {total.value}
       <span className="ar-u">{total.suffix}</span>
     </div>

@@ -17,7 +17,14 @@ export const ResultCard = ({ style, image, value, country, children }) => (
 export const PublicationCard = ({ link, coverProps, cover, title, subtitle }) => (
   <a {...link}>
     <span {...coverProps}>{cover}</span>
-    <div className="ar-pc-t">{title}</div>
+    <div className="ar-pc-t">
+      {title}
+      <span className="ar-pc-cue" aria-hidden="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M5 12h13M13 6l6 6-6 6" />
+        </svg>
+      </span>
+    </div>
     {subtitle !== undefined && <div className="ar-pc-s">{subtitle}</div>}
   </a>
 );
@@ -37,6 +44,13 @@ export const TimelineItem = ({ link, dateProps, date, title, children }) => {
         {title}
       </div>
       <div className="ar-m-a-n">{children}</div>
+      {link.href && (
+        <span className="ar-m-a-cue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M5 12h13M13 6l6 6-6 6" />
+          </svg>
+        </span>
+      )}
     </Tag>
   );
 };
@@ -58,12 +72,11 @@ export const FundingBar = ({ label, fillProps, children }) => (
   </div>
 );
 
-export const ContributorBubble = ({ className, style, rank, amount, children }) => (
+export const ContributorBubble = ({ className, style, value, children }) => (
   <div className={className} style={style}>
     <div className="ar-circ-area">
-      <div className="ar-circle">{rank}</div>
+      <div className="ar-circle">{value}</div>
     </div>
-    <div className="ar-bamt">{amount}</div>
     <div className="ar-bnm">{children}</div>
   </div>
 );

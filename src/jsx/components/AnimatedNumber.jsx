@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { observeOnce, onReducedMotionChange, prefersReducedMotion } from '../hooks/domEffects.js';
 
-const AnimatedNumber = ({ value, decimals = 0, duration = 1400, threshold = 0.5 }) => {
+const AnimatedNumber = ({ value, decimals = 0, duration = 1400, threshold = 0.5, delay = 0 }) => {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -12,12 +12,25 @@ const AnimatedNumber = ({ value, decimals = 0, duration = 1400, threshold = 0.5 
   useEffect(() => {
     setReducedMotion(prefersReducedMotion());
     const stopPreference = onReducedMotionChange(setReducedMotion);
-    const stopObserver = observeOnce(ref.current, () => setInView(true), { threshold });
+    let timer;
+    const stopObserver = observeOnce(
+      ref.current,
+      () => {
+        // delay staggers when a group of counters — e.g. a grid where several
+        // are visible at once — starts rolling, so they don't all move at the
+        // same time; skipped under reduced motion, which jumps straight to
+        // the final value anyway.
+        if (delay && !prefersReducedMotion()) timer = setTimeout(() => setInView(true), delay);
+        else setInView(true);
+      },
+      { threshold },
+    );
     return () => {
       stopObserver();
       stopPreference();
+      clearTimeout(timer);
     };
-  }, [threshold]);
+  }, [threshold, delay]);
 
   return (
     <>

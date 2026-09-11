@@ -61,7 +61,7 @@ export const donorTotal = {
 
 <HeroSection>
   <section className="ar-hero ar-cov">
-    <div className="ar-cov-video ar-hero-anim ar-d1">
+    <div className="ar-cov-video">
       <video
         id="heroVid"
         playsInline
@@ -84,7 +84,7 @@ export const donorTotal = {
       </button>
     </div>
     <div className="ar-container ar-cov-block">
-      <div className="ar-pills ar-hero-anim ar-d2">
+      <div className="ar-pills">
         <a className="ar-button-pill ar-active" href="https://unctad.org/system/files/official-document/osg2026d1_en.pdf">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
@@ -109,21 +109,16 @@ export const donorTotal = {
               />
               <span className="ar-ph-credit">© UN Trade and Development</span>
             </span>
-            <figcaption>
-              {'Rebeca Grynspan'}
-              <span>Secretary-General, UN Trade and Development</span>
-            </figcaption>
           </figure>
           <div className="ar-fw-body">
             <SectionLabel>{'Foreword'}</SectionLabel>
             <h2>A defining year for UN Trade and Development</h2>
-            <p className="ar-lede">Our 16th ministerial conference (UNCTAD16) – the first held in Geneva since our founding in 1964 – brought member States together to adopt the Geneva Consensus, a renewed road map for our work at a time of extraordinary global change. The Geneva Consensus was a comprehensive outcome that reaffirmed UNCTAD’s role as the development arm of the United Nations.</p>
+            <p>Our 16th ministerial conference (UNCTAD16) – the first held in Geneva since our founding in 1964 – brought member States together to adopt the Geneva Consensus, a renewed road map for our work at a time of extraordinary global change. The Geneva Consensus was a comprehensive outcome that reaffirmed UNCTAD’s role as the development arm of the United Nations.</p>
             <p>2025 was also a year of widespread shocks. Tariff volatility reshaped world trade. Investment flows to developing countries weakened. Debt burdens grew heavier. Aid flows declined. For the most vulnerable economies, these pressures compounded one another, making the path to structural transformation steeper than ever.</p>
             <blockquote className="ar-quote">This was a year that showed what UNCTAD can do under pressure.</blockquote>
             <p className="ar-sig">
               <strong>Rebeca Grynspan</strong>
-              <br />
-              {'Secretary-General, UN Trade and Development (UNCTAD)'}
+              <span className="ar-sig-title">Secretary-General, UN Trade and Development (UNCTAD)</span>
             </p>
           </div>
         </div>
@@ -141,11 +136,7 @@ export const donorTotal = {
             </svg>
             {'UNCTAD16 · 16th United Nations Conference on Trade and Development'}
           </div>
-          <h2 className="ar-u16-open-h">
-            {'Four days that'}
-            <br />
-            {'reset the compass'}
-          </h2>
+          <h2 className="ar-u16-open-h">{'Four days that reset the compass'}</h2>
           <p className="ar-u16-open-meta">20–23 October 2025 · Palais des Nations, Geneva</p>
         </div>
       </div>
@@ -165,7 +156,7 @@ export const donorTotal = {
             <Statistic
               className="ar-u16-stat"
               variant="conference"
-              valueProps={{ className: 'ar-n-big ar-cl-red' }}
+              valueProps={{ className: 'ar-n-big ar-cl-blue' }}
               value={<AnimatedNumber value={171} decimals={0} duration={1300} threshold={0.4} />}
             >
               <p>member State delegations – a record for a United Nations conference on trade</p>
@@ -181,10 +172,10 @@ export const donorTotal = {
             <Statistic
               className="ar-u16-stat"
               variant="conference"
-              valueProps={{ className: 'ar-n-big ar-cl-red' }}
+              valueProps={{ className: 'ar-n-big ar-cl-blue' }}
               value={
                 <>
-                  <AnimatedNumber value={40} decimals={0} duration={1300} threshold={0.4} /> <span className="ar-suf">+</span>
+                  <AnimatedNumber value={40} decimals={0} duration={1300} threshold={0.4} /> <span className="ar-u">+</span>
                 </>
               }
             >
@@ -217,11 +208,7 @@ export const donorTotal = {
               <div className="ar-u16-195 ar-n-big">
                 <AnimatedNumber value={195} decimals={0} duration={1300} threshold={0.4} />
               </div>
-              <div className="ar-u16-c-sub">
-                {'member States.'}
-                <br />
-                {'A consensus reached.'}
-              </div>
+              <div className="ar-u16-c-sub">{'member States. A consensus reached.'}</div>
               <h3 className="ar-gc-title">The Geneva Consensus</h3>
               <div className="ar-gc-sub">
                 <p>for a Just and Sustainable Economic Order</p>
@@ -338,7 +325,7 @@ export const donorTotal = {
       <div className="ar-bento">
         <div className="ar-gt ar-white ar-area-a" tabIndex={0} role="group" aria-label="Member States">
           <div className="ar-big">
-            <AnimatedNumber value={195} decimals={0} duration={1300} threshold={0.4} />
+            <AnimatedNumber value={195} decimals={0} duration={1300} threshold={0.4} delay={0} />
           </div>
           <div className="ar-lbl">Member States</div>
           <span className="ar-ic">
@@ -355,7 +342,7 @@ export const donorTotal = {
         <div className="ar-gt ar-red ar-area-b" tabIndex={0} role="group" aria-label="UNCTAD16 participation">
           <p className="ar-rtop">UNCTAD16 took place from 20 to 23 October, with 171 countries participating – a record for a United Nations conference on trade.</p>
           <div className="ar-big">
-            <AnimatedNumber value={171} decimals={0} duration={1300} threshold={0.4} />
+            <AnimatedNumber value={171} decimals={0} duration={1300} threshold={0.4} delay={80} />
             {' '}
             <span className="ar-u">countries</span>
           </div>
@@ -373,7 +360,7 @@ export const donorTotal = {
         </div>
         <div className="ar-gt ar-blue ar-area-c" tabIndex={0} role="group" aria-label="Staff members">
           <div className="ar-big">
-            <AnimatedNumber value={522} decimals={0} duration={1300} threshold={0.4} />
+            <AnimatedNumber value={522} decimals={0} duration={1300} threshold={0.4} delay={160} />
             <span className="ar-u">\*</span>
           </div>
           <div className="ar-lbl">staff members</div>
@@ -392,7 +379,7 @@ export const donorTotal = {
           <div className="ar-big">
             <p>
               {'$'}
-              <AnimatedNumber value={84.1} decimals={1} duration={1300} threshold={0.4} />
+              <AnimatedNumber value={84.1} decimals={1} duration={1300} threshold={0.4} delay={240} />
               <span className="ar-u">million</span>
             </p>
           </div>
@@ -412,17 +399,14 @@ export const donorTotal = {
           <div className="ar-big">
             <p>
               {'$'}
-              <AnimatedNumber value={58.9} decimals={1} duration={1300} threshold={0.4} />
+              <AnimatedNumber value={58.9} decimals={1} duration={1300} threshold={0.4} delay={320} />
+              <span className="ar-u">million</span>
             </p>
-            <span className="ar-u">
-              <br />
-              {'million'}
-            </span>
           </div>
           <div className="ar-lbl">technical cooperation expenditure</div>
           <div className="ar-sub">
             <span className="ar-big">
-              <AnimatedNumber value={203} decimals={0} duration={1300} threshold={0.4} />
+              <AnimatedNumber value={203} decimals={0} duration={1300} threshold={0.4} delay={320} />
             </span>
             <span className="ar-lbl ar-lbl--flush">
               <span className="ar-inline-paragraph">technical cooperation projects</span>
@@ -441,7 +425,7 @@ export const donorTotal = {
         </div>
         <div className="ar-gt ar-yellow ar-area-f ar-ic-top" tabIndex={0} role="group" aria-label="Technical cooperation requests">
           <div className="ar-big">
-            <AnimatedNumber value={78} decimals={0} duration={1300} threshold={0.4} />
+            <AnimatedNumber value={78} decimals={0} duration={1300} threshold={0.4} delay={400} />
             <span className="ar-u">\*\*</span>
           </div>
           <div className="ar-lbl">
@@ -449,7 +433,7 @@ export const donorTotal = {
           </div>
           <div className="ar-sub">
             <span className="ar-big">
-              <AnimatedNumber value={57} decimals={0} duration={1300} threshold={0.4} />
+              <AnimatedNumber value={57} decimals={0} duration={1300} threshold={0.4} delay={400} />
             </span>
             <span className="ar-lbl ar-lbl--flush">
               <span className="ar-inline-paragraph">countries and territories and one regional organization</span>
@@ -473,7 +457,7 @@ export const donorTotal = {
           aria-label="Publications and analytical materials"
         >
           <div className="ar-big">
-            <AnimatedNumber value={238} decimals={0} duration={1300} threshold={0.4} />
+            <AnimatedNumber value={238} decimals={0} duration={1300} threshold={0.4} delay={480} />
           </div>
           <div className="ar-lbl">
             <p>publications, research and analytical materials and parliamentary documents</p>
@@ -492,13 +476,13 @@ export const donorTotal = {
         <div className="ar-gt ar-navy ar-area-h" tabIndex={0} role="group" aria-label="Countries and national projects">
           <div className="ar-duo">
             <span className="ar-big">
-              <AnimatedNumber value={75} decimals={0} duration={1300} threshold={0.4} />
+              <AnimatedNumber value={75} decimals={0} duration={1300} threshold={0.4} delay={560} />
             </span>
             <span className="ar-lbl ar-lbl--flush">
               <span className="ar-inline-paragraph">countries benefited from</span>
             </span>
             <span className="ar-big">
-              <AnimatedNumber value={106} decimals={0} duration={1300} threshold={0.4} />
+              <AnimatedNumber value={106} decimals={0} duration={1300} threshold={0.4} delay={560} />
             </span>
             <span className="ar-lbl ar-lbl--flush">
               {'national projects, including '}
@@ -622,7 +606,6 @@ export const donorTotal = {
       </div>
       <PublicationCarousel
         title="Flagship publications of 2025"
-        description="Explore UNCTAD’s flagship publications from 2025."
         previousLabel="Previous publications"
         nextLabel="Next publications"
       >
@@ -882,7 +865,7 @@ export const donorTotal = {
             className="ar-tc-stat ar-alt"
             value={
               <>
-                <span className="ar-u">$</span>
+                {'$'}
                 <AnimatedNumber value={58.9} decimals={1} />
                 <span className="ar-u"> million</span>
               </>
@@ -923,7 +906,7 @@ export const donorTotal = {
             }}
             value={
               <>
-                {'93'} <span>%</span>
+                {'93'} <span className="ar-u">%</span>
               </>
             }
             country={<>Afghanistan</>}
@@ -935,7 +918,7 @@ export const donorTotal = {
             image={{ src: resolveAsset('assets/img/results-card-eswatini.jpg'), alt: 'Young woman, southern Africa', loading: 'lazy' }}
             value={
               <>
-                {'69'} <span>%</span>
+                {'69'} <span className="ar-u">%</span>
               </>
             }
             country={<>Eswatini</>}
@@ -951,7 +934,7 @@ export const donorTotal = {
             }}
             value={
               <>
-                {'96'} <span>%</span>
+                {'96'} <span className="ar-u">%</span>
               </>
             }
             country={<>The Gambia</>}
@@ -963,7 +946,7 @@ export const donorTotal = {
             image={{ src: resolveAsset('assets/img/results-card-iraq.jpg'), alt: 'Street and mosque, Baghdad', loading: 'lazy' }}
             value={
               <>
-                {'25'} <span>%</span>
+                {'25'} <span className="ar-u">%</span>
               </>
             }
             country={<>Iraq</>}
@@ -979,7 +962,7 @@ export const donorTotal = {
             }}
             value={
               <>
-                {'90'} <span>%</span>
+                {'90'} <span className="ar-u">%</span>
               </>
             }
             country={<>Turkmenistan</>}
@@ -1094,7 +1077,7 @@ export const donorTotal = {
                   <p>Technical cooperation projects, 2025</p>
                 </div>
                 <p className="ar-tp-hint">
-                  Search for a country or click a red marker to read its projects and division/programme codes.
+                  Search for a country or click a red marker to read its projects.
                 </p>
                 <div className="ar-tp-scale">
                   <div>
@@ -1120,12 +1103,6 @@ export const donorTotal = {
               <span className="ar-lg-it ar-lg-note">The map shows the supplied country-level project listing; regional and interregional projects are not included.</span>
             </div>
             <div className="ar-tc-blue-line" />
-            <p className="ar-tc-src">
-              <em>Source:</em>
-              {
-                ' UN Trade and Development, countries_only_sheet1.xlsx, “Projects by country”. Project titles and division/programme codes follow the source. Antarctica excluded.'
-              }
-            </p>
             <p className="ar-tc-disc">
               {
                 'The boundaries and names shown and the designations used on this map do not imply official endorsement or acceptance by the United Nations. See the '
@@ -1134,9 +1111,9 @@ export const donorTotal = {
               {'.'}
             </p>
             <div className="ar-tag-legend ar-tag-legend--divisions" hidden={!projectMapSettings.showDivisions}>
-              <b>Division abbreviations:</b>
+              <b>Abbreviations:</b>
               {
-                ' ALDC – Division for Africa, Least Developed Countries and Special Programmes · DIAE – Division on Investment and Enterprise · DITC – Division on International Trade and Commodities · DTL – Division on Technology and Logistics · GDS – Division on Globalization and Development Strategies · OSG – Office of the Secretary-General · STAT – UNCTAD Statistics'
+                ' ALDC – Division for Africa, Least Developed Countries and Special Programmes · ASYCUDA – Automated System for Customs Data · DIAE – Division on Investment and Enterprise · DITC – Division on International Trade and Commodities · DMFAS – Debt Management and Financial Analysis System · DTL – Division on Technology and Logistics · DGDS – Division on Globalization and Development Strategies · OSG – Office of the Secretary-General · PSMS – Programme Support and Management Service · STAT – UNCTAD Statistics'
               }
             </div>
           </div>
@@ -1149,14 +1126,12 @@ export const donorTotal = {
             role={
               <>
                 Acting Director, Tariff and Trade Affairs,
-                <br />
-                World Customs Organization
+                <span className="ar-tsm-role-line">World Customs Organization</span>
               </>
             }
             date="Letter of 19 February 2025"
-            accent="var(--un-blue-dark)"
           >
-            <p>“Your valuable support, alongside the esteemed support of UNCTAD for the WCO and its initiatives is deeply appreciated…”</p>
+            <p>Your valuable support, alongside the esteemed support of UNCTAD for the WCO and its initiatives is deeply appreciated…</p>
           </TestimonialCard>
           <TestimonialCard
             name="H.E. Ms. Kadra Ahmed Hassan"
@@ -1164,14 +1139,12 @@ export const donorTotal = {
             role={
               <>
                 Ambassador and Permanent Representative,
-                <br />
-                Republic of Djibouti
+                <span className="ar-tsm-role-line">Republic of Djibouti</span>
               </>
             }
             date="Letter of 7 May 2025"
-            accent="var(--un-blue)"
           >
-            <p>“On behalf of the World Trade Organization (WTO) LDC Group, I would like to express our sincere appreciation for the longstanding and strategic support provided by UNCTAD in strengthening the voice and negotiating capacity of LDC delegates at the WTO.”</p>
+            <p>On behalf of the World Trade Organization (WTO) LDC Group, I would like to express our sincere appreciation for the longstanding and strategic support provided by UNCTAD in strengthening the voice and negotiating capacity of LDC delegates at the WTO.</p>
           </TestimonialCard>
           <TestimonialCard
             name="H.E. Mr. Julien Paluku Kahongya"
@@ -1180,12 +1153,10 @@ export const donorTotal = {
             role={
               <>
                 Minister of Foreign Trade,
-                <br />
-                Democratic Republic of the Congo
+                <span className="ar-tsm-role-line">Democratic Republic of the Congo</span>
               </>
             }
             date="Letter of 19 July 2025"
-            accent="var(--dv-red)"
             quoteLanguage="fr"
             translation={
               <p className="ar-tsm-trans ar-tsm-trans--translation">
@@ -1195,7 +1166,7 @@ export const donorTotal = {
               </p>
             }
           >
-            <p>“J’apprécie au nom du Gouvernement l’engagement de la CNUCED à mobiliser son expertise et à recourir à ses partenaires techniques et financiers pour accompagner la République Démocratique du Congo dans cet ambitieux programme de la diversification économique…”</p>
+            <p>J’apprécie au nom du Gouvernement l’engagement de la CNUCED à mobiliser son expertise et à recourir à ses partenaires techniques et financiers pour accompagner la République Démocratique du Congo dans cet ambitieux programme de la diversification économique…</p>
           </TestimonialCard>
         </div>
         <p className="ar-tsm-credits">Portraits: Kadra Ahmed Hassan – © UN Trade and Development / Jean Marc Ferré (CC BY-SA 2.0) · Julien Paluku Kahongya – Ministère du Commerce Extérieur, RDC · Gael Grooby – World Customs Organization.</p>
@@ -1213,7 +1184,7 @@ export const donorTotal = {
           <div className="ar-dn-hero-figs">
             <div>
               <div className="ar-k">
-                <span className="ar-u">$</span>
+                {'$'}
                 <AnimatedNumber value={54} decimals={0} />
                 <span className="ar-u"> million</span>
               </div>
@@ -1223,7 +1194,7 @@ export const donorTotal = {
             </div>
             <div className="ar-amber">
               <div className="ar-k">
-                <span className="ar-u">$</span>
+                {'$'}
                 <AnimatedNumber value={54.4} decimals={1} />
                 <span className="ar-u"> million</span>
               </div>
@@ -1302,34 +1273,34 @@ export const donorTotal = {
           </span>
         </div>
         <div className="ar-dn-bubbles" id="dnBubbles">
-          <ContributorBubble className="ar-bub ar-dev" style={{ '--d': '118px' }} rank={<>1</>} amount={<>$4 million</>}>
+          <ContributorBubble className="ar-bub ar-dev" style={{ '--d': '118px' }} value={<>$4M</>}>
             {' China '}
           </ContributorBubble>
-          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '116px' }} rank={<>2</>} amount={<>$3.8 million</>}>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '116px' }} value={<>$3.8M</>}>
             {' European Union '}
           </ContributorBubble>
-          <ContributorBubble className="ar-bub ar-dvd" style={{ '--d': '103px' }} rank={<>3</>} amount={<>$3 million</>}>
+          <ContributorBubble className="ar-bub ar-dvd" style={{ '--d': '103px' }} value={<>$3M</>}>
             {' Netherlands '}
           </ContributorBubble>
-          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '81px' }} rank={<>4</>} amount={<>$3 million</>}>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '81px' }} value={<>$3M</>}>
             {' UN Development Programme '}
           </ContributorBubble>
-          <ContributorBubble className="ar-bub ar-dvd" style={{ '--d': '81px' }} rank={<>5</>} amount={<>$1.9 million</>}>
+          <ContributorBubble className="ar-bub ar-dvd" style={{ '--d': '81px' }} value={<>$1.9M</>}>
             {' Switzerland '}
           </ContributorBubble>
-          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '70px' }} rank={<>6</>} amount={<>$1.4 million</>}>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '70px' }} value={<>$1.4M</>}>
             {' TradeMark Africa '}
           </ContributorBubble>
-          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '70px' }} rank={<>7</>} amount={<>$1.4 million</>}>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '70px' }} value={<>$1.4M</>}>
             {' African Development Bank '}
           </ContributorBubble>
-          <ContributorBubble className="ar-bub ar-dvd" style={{ '--d': '70px' }} rank={<>8</>} amount={<>$1.4 million</>}>
+          <ContributorBubble className="ar-bub ar-dvd" style={{ '--d': '70px' }} value={<>$1.4M</>}>
             {' United Kingdom '}
           </ContributorBubble>
-          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '68px' }} rank={<>9</>} amount={<>$1.3 million</>}>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '68px' }} value={<>$1.3M</>}>
             <p>UN Multi-Partner Trust Fund Office</p>
           </ContributorBubble>
-          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '60px' }} rank={<>10</>} amount={<>$1 million</>}>
+          <ContributorBubble className="ar-bub ar-io" style={{ '--d': '60px' }} value={<>$1M</>}>
             <p>UN Department of Economic and Social Affairs</p>
           </ContributorBubble>
         </div>
@@ -1345,28 +1316,20 @@ export const donorTotal = {
         <div className="ar-cm-amp">
           <div className="ar-cm-side">
             <div className="ar-cm-n">
-              <AnimatedNumber value={7.3} decimals={1} />
-              <span className="ar-cm-unit"> million</span>
+              {'7.3'}
+              <span className="ar-u"> million</span>
             </div>
             <div className="ar-cm-l">
               <p>people reached through UNCTAD’s own channels</p>
             </div>
           </div>
-          <div className="ar-cm-wave" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
+          <div className="ar-cm-wave">
             <div className="ar-cm-x">14× the reach through partners</div>
           </div>
           <div className="ar-cm-side ar-cm-big">
             <div className="ar-cm-n">
-              <AnimatedNumber value={104} decimals={0} />
-              <span className="ar-cm-unit"> million</span>
+              {'104'}
+              <span className="ar-u"> million</span>
             </div>
             <div className="ar-cm-l">
               <p>people reached through UN News and government partner channels</p>
@@ -1432,16 +1395,40 @@ export const donorTotal = {
               </span>
             </span>
           </div>
+          <div className="ar-cm-row">
+            <span className="ar-ch">Livestreams</span>
+            <span>
+              <span className="ar-fig">
+                <AnimatedNumber value={39} decimals={0} />
+              </span>
+              <span className="ar-txt">
+                <span className="ar-inline-paragraph">livestream sessions</span>
+              </span>
+            </span>
+          </div>
+          <div className="ar-cm-row">
+            <span className="ar-ch">Posts</span>
+            <span>
+              <span className="ar-fig">
+                <AnimatedNumber value={7000} decimals={0} />
+              </span>
+              <span className="ar-txt">
+                <span className="ar-inline-paragraph">posts across UNCTAD’s channels</span>
+              </span>
+            </span>
+          </div>
+          <div className="ar-cm-row">
+            <span className="ar-ch">LinkedIn</span>
+            <span>
+              <span className="ar-fig">
+                <AnimatedNumber value={18000} decimals={0} />
+              </span>
+              <span className="ar-txt">
+                <span className="ar-inline-paragraph">new followers</span>
+              </span>
+            </span>
+          </div>
         </div>
-        <p className="ar-cm-note">
-          {'Also in 2025: '}
-          <b>39</b>
-          {' livestream sessions · nearly '}
-          <b>7,000</b>
-          {' posts · '}
-          <b>18,000</b>
-          {' new LinkedIn followers.'}
-        </p>
       </div>
     </section>
   </CommunicationsSection>
@@ -1453,7 +1440,7 @@ export const donorTotal = {
           link={{
             className: 'ar-xp-tile',
             href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=10',
-            style: { '--bx': '0%', '--by': '0%', '--tc': '#0077B8' },
+            style: { '--bx': '0%', '--by': '0%', '--tc': 'var(--ramp-blue-1)' },
           }}
           number={<>01</>}
           title={<>Leadership and UN reform</>}
@@ -1464,7 +1451,7 @@ export const donorTotal = {
           link={{
             className: 'ar-xp-tile',
             href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=22',
-            style: { '--bx': '50%', '--by': '0%', '--tc': '#009EDB' },
+            style: { '--bx': '50%', '--by': '0%', '--tc': 'var(--ramp-blue-2)' },
           }}
           number={<>02</>}
           title={<>Consensus-building with member States</>}
@@ -1475,7 +1462,7 @@ export const donorTotal = {
           link={{
             className: 'ar-xp-tile',
             href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=46',
-            style: { '--bx': '100%', '--by': '0%', '--tc': '#A05FB4' },
+            style: { '--bx': '100%', '--by': '0%', '--tc': 'var(--ramp-blue-3)' },
           }}
           number={<>03</>}
           title={<>Productive capacities and LDC graduation</>}
@@ -1486,7 +1473,7 @@ export const donorTotal = {
           link={{
             className: 'ar-xp-tile',
             href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=54',
-            style: { '--bx': '0%', '--by': '50%', '--tc': '#ED1847' },
+            style: { '--bx': '0%', '--by': '50%', '--tc': 'var(--ramp-blue-4)' },
           }}
           number={<>04</>}
           title={<>Debt, finance and the global economy</>}
@@ -1497,7 +1484,7 @@ export const donorTotal = {
           link={{
             className: 'ar-xp-tile',
             href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=60',
-            style: { '--bx': '50%', '--by': '50%', '--tc': '#F58220' },
+            style: { '--bx': '50%', '--by': '50%', '--tc': 'var(--ramp-blue-1)' },
           }}
           number={<>05</>}
           title={<>Making trade work for development</>}
@@ -1508,7 +1495,7 @@ export const donorTotal = {
           link={{
             className: 'ar-xp-tile',
             href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=66',
-            style: { '--bx': '100%', '--by': '50%', '--tc': '#FBAF17' },
+            style: { '--bx': '100%', '--by': '50%', '--tc': 'var(--ramp-blue-2)' },
           }}
           number={<>06</>}
           title={<>Investment for sustainable development</>}
@@ -1519,7 +1506,7 @@ export const donorTotal = {
           link={{
             className: 'ar-xp-tile',
             href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=72',
-            style: { '--bx': '0%', '--by': '100%', '--tc': '#72BF44' },
+            style: { '--bx': '0%', '--by': '100%', '--tc': 'var(--ramp-blue-3)' },
           }}
           number={<>07</>}
           title={<>Technology, logistics and trade facilitation</>}
@@ -1530,7 +1517,7 @@ export const donorTotal = {
           link={{
             className: 'ar-xp-tile',
             href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=80',
-            style: { '--bx': '50%', '--by': '100%', '--tc': '#7BB7E1' },
+            style: { '--bx': '50%', '--by': '100%', '--tc': 'var(--ramp-blue-4)' },
           }}
           number={<>08</>}
           title={<>Data, statistics and the Beyond GDP agenda</>}
@@ -1541,7 +1528,7 @@ export const donorTotal = {
           link={{
             className: 'ar-xp-tile',
             href: 'https://unctad.org/system/files/official-document/osg2026d1_en.pdf#page=86',
-            style: { '--bx': '100%', '--by': '100%', '--tc': '#004987' },
+            style: { '--bx': '100%', '--by': '100%', '--tc': 'var(--ramp-blue-1)' },
           }}
           number={<>09</>}
           title={<>UNCTAD at the United Nations in New York</>}

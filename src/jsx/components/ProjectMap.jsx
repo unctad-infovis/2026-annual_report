@@ -66,7 +66,6 @@ export default function ProjectMap({ countries, summary, labels, description, se
                     </>
                   )}
                   {project.title}
-                  <small className="ar-project-map-code">{project.id}</small>
                 </li>
               ))}
             </ul>

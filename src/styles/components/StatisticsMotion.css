@@ -1,9 +1,0 @@
-#app-root-2026-annual_report .ar-gt {
-  transition:
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.3s;
-}
-#app-root-2026-annual_report .ar-gt:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 42px rgba(0, 73, 135, 0.15);
-}

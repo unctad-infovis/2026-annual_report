@@ -1,6 +1,6 @@
 #app-root-2026-annual_report .ar-project-map {
   position: relative;
-  background: #f7fafc;
+  background: linear-gradient(180deg, #f6fafd, #eaf2f9 70%, #f6fafd);
   border-radius: 16px;
   padding: 20px;
   display: grid;
@@ -15,6 +15,9 @@
 #app-root-2026-annual_report .ar-project-map-chart {
   min-width: 0;
   height: clamp(320px, 38vw, 620px);
+}
+#app-root-2026-annual_report .ar-project-map-chart .ar-project-map-country--clickable {
+  cursor: pointer;
 }
 #app-root-2026-annual_report .ar-project-map-panel {
   align-self: center;
@@ -52,9 +55,4 @@
 #app-root-2026-annual_report .ar-project-map-panel {
   min-width: 0;
   overflow-wrap: anywhere;
-}
-#app-root-2026-annual_report .ar-project-map-code {
-  display: block;
-  color: var(--ink-80);
-  margin-top: 4px;
 }

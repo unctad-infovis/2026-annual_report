@@ -1,5 +1,5 @@
-const TestimonialCard = ({ name, image, imageAlt = name, role, date, accent, quoteLanguage, translation, children }) => (
-  <figure className="ar-tsm" style={{ '--ac': accent }}>
+const TestimonialCard = ({ name, image, imageAlt = name, role, date, quoteLanguage, translation, children }) => (
+  <figure className="ar-tsm">
     <div className="ar-tsm-who">
       <span className="ar-tsm-av">
         <img src={image} alt={imageAlt} loading="lazy" />

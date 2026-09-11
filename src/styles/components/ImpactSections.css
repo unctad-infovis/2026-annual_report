@@ -31,11 +31,6 @@
   letter-spacing: -0.03em;
   white-space: nowrap;
 }
-#app-root-2026-annual_report .ar-cm-unit {
-  font-style: normal;
-  font-size: 0.42em;
-  margin-left: 4px;
-}
 #app-root-2026-annual_report .ar-cm-big .ar-cm-n {
   color: var(--un-yellow-dv);
   font-size: clamp(3.4rem, 7vw, 6rem);
@@ -48,76 +43,22 @@
   color: rgba(255, 255, 255, 0.9);
 }
 #app-root-2026-annual_report .ar-cm-wave {
-  position: relative;
-  height: 120px;
-  min-width: 120px;
-  overflow: hidden;
-}
-#app-root-2026-annual_report .ar-cm-wave span {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 48px;
-  height: 70px;
-  margin-top: -35px;
-  background: #fff;
-  opacity: 0.32;
-  -webkit-mask: url('../../assets/img/communications-wave-mask.svg') no-repeat center / contain;
-  mask: url('../../assets/img/communications-wave-mask.svg') no-repeat center / contain;
-  animation: ar-cmFlow 2.6s linear infinite;
-}
-@keyframes ar-cmFlow {
-  0% {
-    transform: translateX(0) scale(0.55);
-    opacity: 0;
-  }
-  18% {
-    opacity: 0.85;
-  }
-  100% {
-    transform: translateX(calc(100% + 100vw * 0.12)) scale(1.5);
-    opacity: 0;
-  }
-}
-#app-root-2026-annual_report .ar-cm-wave span:nth-child(1) {
-  animation-delay: 0s;
-}
-#app-root-2026-annual_report .ar-cm-wave span:nth-child(2) {
-  animation-delay: 0.32s;
-}
-#app-root-2026-annual_report .ar-cm-wave span:nth-child(3) {
-  animation-delay: 0.65s;
-}
-#app-root-2026-annual_report .ar-cm-wave span:nth-child(4) {
-  animation-delay: 0.98s;
-}
-#app-root-2026-annual_report .ar-cm-wave span:nth-child(5) {
-  animation-delay: 1.3s;
-}
-#app-root-2026-annual_report .ar-cm-wave span:nth-child(6) {
-  animation-delay: 1.62s;
-}
-#app-root-2026-annual_report .ar-cm-wave span:nth-child(7) {
-  animation-delay: 1.95s;
-}
-#app-root-2026-annual_report .ar-cm-wave span:nth-child(8) {
-  animation-delay: 2.28s;
+  display: grid;
+  place-items: center;
+  min-height: 78px;
+  padding-block: 12px;
 }
 #app-root-2026-annual_report .ar-cm-x {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
   background: var(--un-yellow-dv);
   color: var(--un-blue-dark);
   font: 800 1.15rem var(--font);
   padding: 8px 16px;
   border-radius: 999px;
   white-space: nowrap;
+  text-align: center;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
-@media (max-width: 1350px) {
+@media (max-width: 1120px) {
   #app-root-2026-annual_report .ar-cm-amp {
     grid-template-columns: 1fr;
     text-align: left;
@@ -126,21 +67,12 @@
     max-width: none;
   }
   #app-root-2026-annual_report .ar-cm-wave {
-    display: grid;
-    place-items: center;
-    min-width: 0;
-    min-height: 78px;
-    height: auto;
-    padding-block: 12px;
+    place-items: start;
   }
   #app-root-2026-annual_report .ar-cm-x {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
     max-width: 100%;
     white-space: normal;
-    text-align: center;
+    text-align: left;
   }
 }
 #app-root-2026-annual_report .ar-cm-rows {
@@ -169,30 +101,11 @@
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
 }
-#app-root-2026-annual_report .ar-cm-row .ar-fig .ar-u {
-  font-size: 0.6em;
-  margin-left: 2px;
-}
 #app-root-2026-annual_report .ar-cm-row .ar-txt {
   display: block;
   font-size: 0.9rem;
   color: var(--ink-80);
   margin-top: 4px;
-}
-#app-root-2026-annual_report .ar-cm-note {
-  margin: 18px 2px 0;
-  font-size: 0.86rem;
-  color: var(--ink-80);
-  line-height: 1.6;
-}
-#app-root-2026-annual_report .ar-cm-note b {
-  color: var(--un-blue-aaa);
-}
-@media (prefers-reduced-motion: reduce) {
-  #app-root-2026-annual_report .ar-cm-wave span {
-    animation: none;
-    opacity: 0.5;
-  }
 }
 #app-root-2026-annual_report .ar-imp-grid {
   display: grid;
@@ -206,7 +119,10 @@
 }
 @media (max-width: 680px) {
   #app-root-2026-annual_report .ar-imp-grid {
-    grid-template-columns: minmax(0, 1fr);
+    /* Two columns, not one: a single full-width column combined with the
+       card's 4/5 photo aspect ratio made each card nearly fill the screen. */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 }
 #app-root-2026-annual_report .ar-imp-card {
@@ -218,13 +134,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition:
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.3s;
-}
-#app-root-2026-annual_report .ar-imp-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 42px rgba(0, 73, 135, 0.16);
 }
 #app-root-2026-annual_report .ar-imp-ph {
   position: relative;
@@ -237,10 +146,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-#app-root-2026-annual_report .ar-imp-card:hover .ar-imp-ph img {
-  transform: scale(1.06);
 }
 #app-root-2026-annual_report .ar-imp-num {
   position: absolute;
@@ -253,11 +158,6 @@
   letter-spacing: -0.02em;
   padding: 13px 40px 13px 16px;
   clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%);
-}
-#app-root-2026-annual_report .ar-imp-num span {
-  font-size: 0.5em;
-  margin-left: 1px;
-  vertical-align: 0.28em;
 }
 #app-root-2026-annual_report .ar-imp-body {
   padding: 15px 16px 17px;
@@ -299,13 +199,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition:
-    box-shadow 0.25s,
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-#app-root-2026-annual_report .ar-tsm:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 38px rgba(0, 73, 135, 0.13);
 }
 #app-root-2026-annual_report .ar-tsm::before {
   content: '';
@@ -314,7 +207,7 @@
   right: 0;
   top: 0;
   height: 4px;
-  background: var(--ac, var(--un-blue));
+  background: var(--un-blue);
 }
 #app-root-2026-annual_report .ar-tsm::after {
   content: '\201D';
@@ -322,7 +215,7 @@
   right: 14px;
   bottom: -38px;
   font: 800 8rem / 1 var(--font);
-  color: var(--ac, var(--un-blue));
+  color: var(--un-blue);
   opacity: 0.09;
   pointer-events: none;
 }
@@ -337,7 +230,7 @@
   height: 68px;
   border-radius: 50%;
   overflow: hidden;
-  background: var(--ac, var(--un-blue));
+  background: var(--un-blue);
   color: #fff;
   display: flex;
   align-items: center;
@@ -364,6 +257,9 @@
   color: var(--ink-80);
   line-height: 1.35;
 }
+#app-root-2026-annual_report .ar-tsm-role-line {
+  display: block;
+}
 #app-root-2026-annual_report .ar-tsm blockquote {
   margin: 20px 0 0;
   font-size: 1.02rem;
@@ -371,10 +267,27 @@
   color: var(--ink);
   font-weight: 500;
 }
+#app-root-2026-annual_report .ar-tsm blockquote p {
+  /* The quote text is authored as a <p>, which defaults to block-level and
+     would otherwise drop to its own line below the ::before quote mark. */
+  display: inline;
+  margin: 0;
+}
+#app-root-2026-annual_report .ar-tsm blockquote::before,
+#app-root-2026-annual_report .ar-tsm blockquote::after {
+  font: 800 1.8em / 1 var(--font);
+  color: var(--un-blue);
+  /* Nudges the oversized glyph down so its optical weight sits on the same
+     baseline as the surrounding text instead of floating above it. */
+  vertical-align: -0.15em;
+}
 #app-root-2026-annual_report .ar-tsm blockquote::before {
   content: '\201C';
-  color: var(--ac, var(--un-blue));
-  font-weight: 800;
+  margin-right: 4px;
+}
+#app-root-2026-annual_report .ar-tsm blockquote::after {
+  content: '\201D';
+  margin-left: 4px;
 }
 #app-root-2026-annual_report .ar-tsm-credits {
   margin: 16px 2px 0;
@@ -410,9 +323,6 @@
 #app-root-2026-annual_report .ar-tc-mapfull {
   width: 100cqw;
   margin: 46px 0 0 calc(50% - 50cqw);
-}
-#app-root-2026-annual_report .ar-tc-b {
-  pointer-events: none;
 }
 #app-root-2026-annual_report .ar-tp-kick {
   font: 800 11px var(--font);
@@ -486,14 +396,6 @@
   background: var(--un-blue);
   border-radius: 2px;
 }
-#app-root-2026-annual_report .ar-tc-src {
-  margin: 12px 0 0;
-  font-size: 0.8rem;
-  color: var(--grey-text);
-}
-#app-root-2026-annual_report .ar-tc-src em {
-  font-style: italic;
-}
 #app-root-2026-annual_report .ar-tc-disc {
   margin: 6px 0 0;
   font-size: 0.72rem;
@@ -522,9 +424,6 @@
   color: var(--un-blue);
 }
 #app-root-2026-annual_report .ar-tc-stat .ar-k .ar-u {
-  font-size: 0.42em;
-  font-weight: 700;
-  margin-left: 3px;
   color: var(--un-blue-mid);
 }
 #app-root-2026-annual_report .ar-tc-stat .ar-l {
@@ -630,10 +529,6 @@
 #app-root-2026-annual_report .ar-flag.ar-g .ar-fabbr {
   background: var(--dv-green);
 }
-#app-root-2026-annual_report .ar-flag.ar-y .ar-fabbr {
-  background: var(--un-yellow-dv);
-  color: var(--ink);
-}
 #app-root-2026-annual_report .ar-flag.ar-d .ar-fabbr {
   background: var(--un-blue-dark);
 }
@@ -687,9 +582,6 @@
 #app-root-2026-annual_report .ar-flag.ar-g .ar-freach b {
   color: var(--dv-green);
 }
-#app-root-2026-annual_report .ar-flag.ar-y .ar-freach b {
-  color: #cf3f0b;
-}
 #app-root-2026-annual_report .ar-flag.ar-d .ar-freach b {
   color: var(--un-blue-dark);
 }
@@ -709,9 +601,6 @@
 }
 #app-root-2026-annual_report .ar-flag.ar-g .ar-fcue {
   color: var(--dv-green);
-}
-#app-root-2026-annual_report .ar-flag.ar-y .ar-fcue {
-  color: #cf3f0b;
 }
 #app-root-2026-annual_report .ar-flag.ar-d .ar-fcue {
   color: var(--un-blue-dark);
@@ -738,35 +627,6 @@
 /* biome-ignore lint/style/noDescendingSpecificity: Shared font sizing does not override the more specific open-state content. */
 #app-root-2026-annual_report .ar-flag .ar-fcue .ar-txt::after {
   font-size: 0.72rem;
-}
-#app-root-2026-annual_report .ar-proj {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  overflow: hidden;
-  transition:
-    box-shadow 0.2s,
-    transform 0.2s,
-    opacity 0.3s;
-}
-#app-root-2026-annual_report .ar-proj:hover {
-  box-shadow: 0 16px 38px rgba(0, 73, 135, 0.13);
-  transform: translateY(-3px);
-}
-#app-root-2026-annual_report .ar-proj h4 {
-  margin: 0 0 8px;
-  font-size: 1.08rem;
-  line-height: 1.22;
-  color: var(--ink);
-  font-weight: 700;
-}
-#app-root-2026-annual_report .ar-proj p {
-  margin: 0;
-  font-size: 0.93rem;
-  color: var(--ink-80);
 }
 #app-root-2026-annual_report section.ar-dn {
   background: #fff;
@@ -830,11 +690,6 @@
   font-size: clamp(2.4rem, 4.4vw, 3.5rem);
   line-height: 1;
   letter-spacing: -0.02em;
-}
-#app-root-2026-annual_report .ar-dn-hero-figs .ar-k .ar-u {
-  font-size: 0.42em;
-  font-weight: 700;
-  margin-left: 2px;
 }
 #app-root-2026-annual_report .ar-dn-hero-figs .ar-l {
   margin-top: 8px;
@@ -924,9 +779,6 @@
   color: var(--ink);
   letter-spacing: -0.02em;
 }
-#app-root-2026-annual_report .ar-dn-center .ar-cnum .ar-u {
-  font-size: 0.5em;
-}
 #app-root-2026-annual_report .ar-dn-center .ar-clab {
   margin-top: 6px;
   font-size: 0.86rem;
@@ -989,22 +841,27 @@
   font-size: 0.8rem;
 }
 #app-root-2026-annual_report .ar-dn-bars {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-#app-root-2026-annual_report .ar-dn-bar {
+  /* .ar-dn-bar rows use display: contents so their cells become direct
+     children here, sharing ONE set of column tracks. Previously each row
+     was its own independent grid, so the label column width (and therefore
+     where each bar started) differed per row based on that row's own label
+     length — right-aligning labels within a shared column keeps every bar's
+     left edge flush, which is what actually makes the chart read as tight. */
   display: grid;
   grid-template-columns: minmax(max-content, 232px) 1fr 84px;
-  gap: 14px;
+  column-gap: 14px;
+  row-gap: 10px;
   align-items: center;
-  padding: 5px 0;
+}
+#app-root-2026-annual_report .ar-dn-bar {
+  display: contents;
 }
 #app-root-2026-annual_report .ar-dn-bar .ar-bnm {
   font-weight: 600;
   color: var(--ink);
   font-size: 0.95rem;
   white-space: nowrap;
+  text-align: right;
 }
 #app-root-2026-annual_report .ar-dn-bar .ar-btrack {
   height: 20px;
@@ -1055,9 +912,9 @@
   margin-top: 0;
 }
 @media (max-width: 640px) {
-  #app-root-2026-annual_report .ar-dn-bar {
+  #app-root-2026-annual_report .ar-dn-bars {
     grid-template-columns: minmax(max-content, 150px) 1fr 52px;
-    gap: 9px;
+    column-gap: 9px;
   }
   #app-root-2026-annual_report .ar-dn-bar .ar-bnm {
     font-size: 0.78rem;
@@ -1108,7 +965,12 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  font: 800 1.15rem / 1 var(--font);
+  /* Was sized for a 1-2 digit rank number; now holds an abbreviated dollar
+     value ($3.8M) which needs more room and no wrapping to fit the smallest
+     (60px) circles. */
+  font: 800 0.92rem / 1 var(--font);
+  white-space: nowrap;
+  padding: 0 4px;
   box-shadow: 0 8px 22px rgba(0, 73, 135, 0.14);
   transform: scale(0);
   transition: transform 0.62s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1123,15 +985,8 @@
   background: var(--un-yellow-dv);
   color: var(--un-blue-dark);
 }
-#app-root-2026-annual_report .ar-bub .ar-bamt {
-  margin-top: 8px;
-  font-weight: 800;
-  color: var(--ink);
-  font-variant-numeric: tabular-nums;
-  font-size: 0.98rem;
-}
 #app-root-2026-annual_report .ar-bub .ar-bnm {
-  margin-top: 1px;
+  margin-top: 12px;
   font-size: 0.8rem;
   color: var(--ink-80);
   line-height: 1.22;
@@ -1153,13 +1008,12 @@
   #app-root-2026-annual_report .ar-bub .ar-circle {
     width: min(var(--d), 30vw);
     height: min(var(--d), 30vw);
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   #app-root-2026-annual_report .ar-flag,
-  #app-root-2026-annual_report .ar-proj,
   #app-root-2026-annual_report .ar-dn-bar .ar-bfill,
   #app-root-2026-annual_report .ar-bub .ar-circle,
   #app-root-2026-annual_report .ar-dn-donut .ar-seg {

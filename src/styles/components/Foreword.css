@@ -53,19 +53,6 @@
   opacity: 0.85;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
-#app-root-2026-annual_report .ar-fw-photo figcaption {
-  margin-top: 30px;
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 1.02rem;
-}
-#app-root-2026-annual_report .ar-fw-photo figcaption span {
-  display: block;
-  font-weight: 400;
-  font-size: 0.87rem;
-  color: var(--grey-text);
-  margin-top: 3px;
-}
 #app-root-2026-annual_report .ar-quote {
   border-left: 0;
   position: relative;

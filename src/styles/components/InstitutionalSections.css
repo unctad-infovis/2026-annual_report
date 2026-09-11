@@ -4,11 +4,12 @@
   gap: 14px;
 }
 #app-root-2026-annual_report .ar-m-a-item {
+  position: relative;
   display: block;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 13px;
-  padding: 20px 21px 19px;
+  padding: 20px 46px 19px 21px;
   text-decoration: none;
   color: inherit;
   box-shadow: 0 6px 18px rgba(0, 73, 135, 0.06);
@@ -20,6 +21,25 @@
   transform: translateY(-3px);
   box-shadow: 0 14px 34px rgba(0, 73, 135, 0.14);
   text-decoration: none;
+}
+#app-root-2026-annual_report .ar-m-a-cue {
+  position: absolute;
+  top: 19px;
+  right: 18px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  color: var(--un-blue);
+}
+#app-root-2026-annual_report .ar-m-a-cue svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 #app-root-2026-annual_report .ar-m-a-mo {
   display: inline-block;
@@ -127,6 +147,24 @@
   font: 700 0.92rem / 1.25 var(--font);
   color: var(--ink);
 }
+#app-root-2026-annual_report .ar-pc-cue {
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  vertical-align: -1px;
+  color: var(--un-blue);
+}
+#app-root-2026-annual_report .ar-pc-cue svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 #app-root-2026-annual_report .ar-pc-s {
   display: block;
   margin-top: 3px;
@@ -151,7 +189,9 @@
 #app-root-2026-annual_report .ar-gt {
   position: relative;
   border-radius: 12px;
-  padding: 24px 26px 22px;
+  /* Bottom padding reserves clearance for the absolutely positioned .ar-ic icon
+     (64px, offset 14px from the bottom) so wrapped labels never render under it. */
+  padding: 24px 26px 88px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -163,13 +203,7 @@
   font-size: clamp(2.6rem, 4.2vw, 3.7rem);
 }
 #app-root-2026-annual_report .ar-gt .ar-u {
-  font-size: 0.3em;
-  font-weight: 700;
-  letter-spacing: 0;
   line-height: 1.05;
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 6px;
 }
 #app-root-2026-annual_report .ar-gt .ar-lbl {
   font-size: 1.02rem;
@@ -326,6 +360,11 @@
   margin-top: 6px;
 }
 
+#app-root-2026-annual_report .ar-gt.ar-area-c,
+#app-root-2026-annual_report .ar-gt.ar-area-h {
+  /* Larger 74px icon needs more reserved clearance than the 64px default. */
+  padding-bottom: 98px;
+}
 #app-root-2026-annual_report .ar-gt.ar-area-c .ar-ic {
   width: 74px;
   height: 74px;
@@ -333,6 +372,12 @@
 #app-root-2026-annual_report .ar-gt.ar-area-h .ar-ic {
   width: 74px;
   height: 74px;
+}
+#app-root-2026-annual_report .ar-gt.ar-ic-top {
+  /* Icon sits at the top for these cards instead of the bottom, so the
+     reserved clearance moves from padding-bottom to padding-top. */
+  padding-top: 94px;
+  padding-bottom: 24px;
 }
 #app-root-2026-annual_report .ar-gt.ar-ic-top .ar-ic {
   top: 20px;

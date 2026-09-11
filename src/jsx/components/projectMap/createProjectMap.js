@@ -38,7 +38,7 @@ const geographyLabels = Object.fromEntries(
   topology.objects.economies.geometries.map(item => [item.properties.code, item.properties.labelen]),
 );
 
-export function setSelectedMapPoint(chart, code) {
+function setSelectedMapPoint(chart, code) {
   const markerSeries = chart.series.find(series => series.type === 'mappoint');
   markerSeries?.points.forEach(point => {
     point.select(false, true);
@@ -66,14 +66,43 @@ export function createProjectMap(container, description, countries, labels, onSe
         type: 'map',
         mapData: polygons,
         joinBy: ['code', 'code'],
-        enableMouseTracking: false,
         accessibility: { enabled: false },
-        borderWidth: 0,
-        data: polygons.map(({ properties }) => ({
-          code: properties.code,
-          name: geographyLabels[properties.code],
-          color: getColor({ ...properties, value: projects[properties.code]?.projects.length }, rows, ['156', '158', '344', '446'], color),
-        })),
+        // borderWidth/borderColor intentionally left unset — falls back to
+        // Highcharts' own map-series defaults rather than a design-mockup value.
+        data: polygons.map(({ properties }) => {
+          const hasProjects = Boolean(projects[properties.code]?.projects.length);
+          return {
+            code: properties.code,
+            name: geographyLabels[properties.code],
+            color: getColor(
+              { ...properties, value: projects[properties.code]?.projects.length },
+              rows,
+              ['156', '158', '344', '446'],
+              color,
+            ),
+            // Only countries with projects get a hover highlight and are
+            // clickable, matching the mockup's .tc-c.hit rules — countries
+            // with no projects stay inert, same as the mockup and the marker
+            // dots (which only exist for countries that have projects).
+            // A per-point `cursor` option is silently ignored by Highcharts —
+            // its cursor tracker only reads the series-level option (see
+            // node_modules/highcharts Core/Series/Series.js), which would
+            // apply "pointer" to every country. className + CSS is the
+            // correct way to get a per-point cursor.
+            ...(hasProjects
+              ? {
+                  className: 'ar-project-map-country--clickable',
+                  states: { hover: { color: '#009EDB' } },
+                  events: {
+                    click() {
+                      onSelectCountry(properties.code);
+                      return false;
+                    },
+                  },
+                }
+              : {}),
+          };
+        }),
       },
       ...borders,
       {
@@ -92,7 +121,7 @@ export function createProjectMap(container, description, countries, labels, onSe
         dataLabels: { enabled: false },
         name: labels.series,
         data: markers,
-        color: '#e5243b',
+        color: '#ED1847',
         marker: {
           radius: 4,
           lineColor: '#fff',

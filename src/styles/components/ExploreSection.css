@@ -71,9 +71,6 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #fff;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: 0.35s;
 }
 #app-root-2026-annual_report .ar-xp-tile:hover .ar-xp-tint,
 #app-root-2026-annual_report .ar-xp-tile:focus-visible .ar-xp-tint {
@@ -86,11 +83,6 @@
 }
 #app-root-2026-annual_report .ar-xp-tile:hover .ar-xp-n {
   color: rgba(255, 255, 255, 0.85);
-}
-#app-root-2026-annual_report .ar-xp-tile:hover .ar-xp-go,
-#app-root-2026-annual_report .ar-xp-tile:focus-visible .ar-xp-go {
-  opacity: 1;
-  transform: none;
 }
 #app-root-2026-annual_report .ar-xp-tile:focus-visible {
   outline: 3px solid var(--un-blue);

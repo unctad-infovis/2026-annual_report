@@ -89,6 +89,11 @@
   letter-spacing: -0.025em;
   color: #fff;
   margin: 0 0 18px;
+  /* max-width plus text-wrap: balance controls where this wraps instead of
+     a hardcoded <br> — adapts at any viewport width rather than breaking at
+     a fixed point that only looks right on some screens. */
+  max-width: 20ch;
+  text-wrap: balance;
   text-shadow: 0 2px 18px rgba(90, 0, 22, 0.35);
 }
 #app-root-2026-annual_report .ar-u16-open-meta {
@@ -106,8 +111,8 @@
   max-width: 1100px;
 }
 #app-root-2026-annual_report .ar-u16-2col p {
-  color: #c9c5c2;
-  font-size: 1.05rem;
+  color: #fff;
+  font-size: 1.125rem;
   margin: 0;
 }
 #app-root-2026-annual_report .ar-u16-statrow {
@@ -143,13 +148,6 @@
   font-size: clamp(2.6rem, 4.6vw, 3.8rem);
   line-height: 1;
   letter-spacing: -0.02em;
-}
-#app-root-2026-annual_report .ar-n-big .ar-suf {
-  font-size: 0.55em;
-  vertical-align: 0.3em;
-}
-#app-root-2026-annual_report .ar-cl-red {
-  color: #ff4d64;
 }
 #app-root-2026-annual_report .ar-cl-blue {
   color: #1faae3;
@@ -341,15 +339,6 @@
   #app-root-2026-annual_report .ar-gc-quote img {
     width: 88px;
     height: 88px;
-  }
-}
-#app-root-2026-annual_report .ar-op {
-  color: #cfcbd2;
-  font-size: 0.9rem;
-}
-@media (max-width: 760px) {
-  #app-root-2026-annual_report .ar-op {
-    align-self: center;
   }
 }
 #app-root-2026-annual_report .ar-u16-film {

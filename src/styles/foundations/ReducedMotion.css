@@ -12,18 +12,9 @@
   #app-root-2026-annual_report .annual-report-app div.container_back_to_top {
     animation: none;
   }
-  #app-root-2026-annual_report .ar-hero-anim {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
   #app-root-2026-annual_report .ar-rv {
     opacity: 1;
     transform: none;
-    transition: none;
-  }
-  #app-root-2026-annual_report .ar-gt,
-  #app-root-2026-annual_report .ar-button-pill {
     transition: none;
   }
 }
