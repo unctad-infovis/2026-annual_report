@@ -147,24 +147,6 @@
   font: 700 0.92rem / 1.25 var(--font);
   color: var(--ink);
 }
-#app-root-2026-annual_report .ar-pc-cue {
-  display: inline-grid;
-  place-items: center;
-  width: 14px;
-  height: 14px;
-  margin-left: 4px;
-  vertical-align: -1px;
-  color: var(--un-blue);
-}
-#app-root-2026-annual_report .ar-pc-cue svg {
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
 #app-root-2026-annual_report .ar-pc-s {
   display: block;
   margin-top: 3px;

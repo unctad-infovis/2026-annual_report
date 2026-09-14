@@ -20,11 +20,6 @@ export const PublicationCard = ({ link, coverProps, cover, title, subtitle }) =>
     <div className="ar-pc-t">
       {title}
       {link.target === '_blank' && <span className="ar-sr-only"> (opens in a new tab)</span>}
-      <span className="ar-pc-cue" aria-hidden="true">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M5 12h13M13 6l6 6-6 6" />
-        </svg>
-      </span>
     </div>
     {subtitle !== undefined && <div className="ar-pc-s">{subtitle}</div>}
   </a>
