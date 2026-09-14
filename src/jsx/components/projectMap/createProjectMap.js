@@ -30,7 +30,7 @@ const borders = [
     accessibility: { enabled: false },
     showInLegend: false,
     lineWidth: 1,
-    mapData: series.mapData.map(line => ({ ...line, color: '#647E94', lineWidth: 1 })),
+    mapData: series.mapData.map(line => ({ ...line, color: '#ffffff', lineWidth: 1 })),
   };
 });
 const polygons = processPolygons(topology, 'economies-color').filter(item => item.properties.code !== '010');
@@ -67,8 +67,8 @@ export function createProjectMap(container, description, countries, labels, onSe
         mapData: polygons,
         joinBy: ['code', 'code'],
         accessibility: { enabled: false },
-        // borderWidth/borderColor intentionally left unset — falls back to
-        // Highcharts' own map-series defaults rather than a design-mockup value.
+        borderColor: '#ffffff',
+        borderWidth: 1,
         data: polygons.map(({ properties }) => {
           const hasProjects = Boolean(projects[properties.code]?.projects.length);
           return {
@@ -80,15 +80,6 @@ export function createProjectMap(container, description, countries, labels, onSe
               ['156', '158', '344', '446'],
               color,
             ),
-            // Only countries with projects get a hover highlight and are
-            // clickable, matching the mockup's .tc-c.hit rules — countries
-            // with no projects stay inert, same as the mockup and the marker
-            // dots (which only exist for countries that have projects).
-            // A per-point `cursor` option is silently ignored by Highcharts —
-            // its cursor tracker only reads the series-level option (see
-            // node_modules/highcharts Core/Series/Series.js), which would
-            // apply "pointer" to every country. className + CSS is the
-            // correct way to get a per-point cursor.
             ...(hasProjects
               ? {
                   className: 'ar-project-map-country--clickable',

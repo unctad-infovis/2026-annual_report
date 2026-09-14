@@ -1,12 +1,8 @@
-import { getIconUrl } from '@unctad-infovis/unctad-icons';
+import ChevronIcon from './ChevronIcon.jsx';
 
 const SectionLabel = ({ children }) => (
   <div className="ar-eyebrow">
-    <span
-      aria-hidden="true"
-      className="ar-icon-arrow ar-icon-arrow--text"
-      style={{ '--ar-shared-arrow': `url(${getIconUrl('arrow_yellow.png')})` }}
-    />
+    <ChevronIcon />
     {children}
   </div>
 );

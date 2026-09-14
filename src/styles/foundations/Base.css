@@ -48,11 +48,9 @@
   display: block;
   margin: 0 0 1rem;
 }
-/* Canonical treatment for a unit word or suffix symbol (million, %, +) sitting
-   next to a large headline number — previously duplicated across components
-   at inconsistent ratios (0.3em/0.5em/0.55em/0.6em). The $ sign itself is
-   deliberately NOT part of this class: it stays full-size, inline with the
-   number, everywhere. */
+#app-root-2026-annual_report .ar-cnt {
+  user-select: none;
+}
 #app-root-2026-annual_report :where(.annual-report-app) .ar-u {
   font-size: 0.42em;
   font-weight: 700;

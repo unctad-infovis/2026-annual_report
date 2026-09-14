@@ -17,3 +17,8 @@
 #app-root-2026-annual_report :where(.annual-report-app) #overview {
   padding: 84px 0 76px;
 }
+@media (max-width: 940px) {
+  #app-root-2026-annual_report :where(.annual-report-app) #overview {
+    padding: 0;
+  }
+}

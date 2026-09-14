@@ -78,10 +78,19 @@
 #app-root-2026-annual_report .ar-cm-rows {
   margin-top: 26px;
   border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(24px, 4vw, 60px);
+  align-items: center;
 }
+@media (max-width: 720px) {
+  #app-root-2026-annual_report .ar-cm-rows {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* Category label and stat sit side by side, both centered within their half. */
 #app-root-2026-annual_report .ar-cm-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
   text-align: center;
   gap: 6px 22px;
   align-items: center;
@@ -119,8 +128,6 @@
 }
 @media (max-width: 680px) {
   #app-root-2026-annual_report .ar-imp-grid {
-    /* Two columns, not one: a single full-width column combined with the
-       card's 4/5 photo aspect ratio made each card nearly fill the screen. */
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
@@ -268,8 +275,6 @@
   font-weight: 500;
 }
 #app-root-2026-annual_report .ar-tsm blockquote p {
-  /* The quote text is authored as a <p>, which defaults to block-level and
-     would otherwise drop to its own line below the ::before quote mark. */
   display: inline;
   margin: 0;
 }
@@ -277,8 +282,6 @@
 #app-root-2026-annual_report .ar-tsm blockquote::after {
   font: 800 1.8em / 1 var(--font);
   color: var(--un-blue);
-  /* Nudges the oversized glyph down so its optical weight sits on the same
-     baseline as the surrounding text instead of floating above it. */
   vertical-align: -0.15em;
 }
 #app-root-2026-annual_report .ar-tsm blockquote::before {
@@ -323,6 +326,8 @@
 #app-root-2026-annual_report .ar-tc-mapfull {
   width: 100cqw;
   margin: 46px 0 0 calc(50% - 50cqw);
+  background: linear-gradient(180deg, #f6fafd, #eaf2f9 70%, #f6fafd);
+  padding: clamp(18px, 3vw, 44px) clamp(10px, 2.5vw, 40px);
 }
 #app-root-2026-annual_report .ar-tp-kick {
   font: 800 11px var(--font);
@@ -841,12 +846,6 @@
   font-size: 0.8rem;
 }
 #app-root-2026-annual_report .ar-dn-bars {
-  /* .ar-dn-bar rows use display: contents so their cells become direct
-     children here, sharing ONE set of column tracks. Previously each row
-     was its own independent grid, so the label column width (and therefore
-     where each bar started) differed per row based on that row's own label
-     length — right-aligning labels within a shared column keeps every bar's
-     left edge flush, which is what actually makes the chart read as tight. */
   display: grid;
   grid-template-columns: minmax(max-content, 232px) 1fr 84px;
   column-gap: 14px;
@@ -965,12 +964,9 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  /* Was sized for a 1-2 digit rank number; now holds an abbreviated dollar
-     value ($3.8M) which needs more room and no wrapping to fit the smallest
-     (60px) circles. */
-  font: 800 0.92rem / 1 var(--font);
-  white-space: nowrap;
-  padding: 0 4px;
+  font: 800 0.82rem / 1.08 var(--font);
+  text-align: center;
+  padding: 0 6px;
   box-shadow: 0 8px 22px rgba(0, 73, 135, 0.14);
   transform: scale(0);
   transition: transform 0.62s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1008,7 +1004,8 @@
   #app-root-2026-annual_report .ar-bub .ar-circle {
     width: min(var(--d), 30vw);
     height: min(var(--d), 30vw);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    padding: 0 3px;
   }
 }
 
@@ -1041,12 +1038,6 @@
   line-height: 1.7;
 }
 
-#app-root-2026-annual_report .annual-report-app .ar-tsm-trans--translation {
-  font-size: 0.85em;
-  color: var(--ink-80);
-  margin: 0.6em 0 0;
-  font-style: italic;
-}
 #app-root-2026-annual_report .annual-report-app .ar-dn-swatch--developing {
   background: #009edb;
 }

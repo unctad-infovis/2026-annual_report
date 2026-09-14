@@ -8,7 +8,10 @@ export const DonorLegend = ({ groups }) => (
           {group.note && <small>{group.note}</small>}
         </span>
         <span className="ar-vv">
+          {'$'}
           {group.amount}
+          <br />
+          <span className="ar-u">million</span>
           <small>{group.percentage}%</small>
         </span>
       </button>
@@ -21,6 +24,7 @@ export const DonorTotal = ({ total }) => (
     <div className="ar-cnum">
       {total.prefix}
       {total.value}
+      <br />
       <span className="ar-u">{total.suffix}</span>
     </div>
     <div className="ar-clab">{total.label}</div>

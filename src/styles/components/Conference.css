@@ -16,9 +16,10 @@
   text-transform: uppercase;
   margin: 0 0 20px;
 }
-#app-root-2026-annual_report .ar-u16-kick svg {
+#app-root-2026-annual_report .ar-u16-kick .ar-icon-arrow {
   width: 13px;
   height: 13px;
+  margin-right: 0;
   flex: 0 0 auto;
 }
 #app-root-2026-annual_report .ar-u16-kick.ar-blue {
@@ -89,9 +90,6 @@
   letter-spacing: -0.025em;
   color: #fff;
   margin: 0 0 18px;
-  /* max-width plus text-wrap: balance controls where this wraps instead of
-     a hardcoded <br> — adapts at any viewport width rather than breaking at
-     a fixed point that only looks right on some screens. */
   max-width: 20ch;
   text-wrap: balance;
   text-shadow: 0 2px 18px rgba(90, 0, 22, 0.35);

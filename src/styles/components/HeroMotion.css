@@ -2,9 +2,6 @@
   min-height: 86vh;
 }
 #app-root-2026-annual_report .container_back_to_top {
-  /* Overrides the vendor package's unprompted 5x bounce (fires 10s after the
-     button appears, with no state to confirm) — self-triggered decorative
-     motion with no purpose. */
   animation-name: none;
 }
 #app-root-2026-annual_report .ar-sr-only {
@@ -30,8 +27,8 @@
 }
 #app-root-2026-annual_report .ar-cov-video {
   position: relative;
-  width: calc(100% - 48px);
-  max-width: calc(var(--maxw) - 48px);
+  width: 100%;
+  max-width: 1920px;
   margin: 0 auto;
   background: #c5dfef;
   line-height: 0;
@@ -39,6 +36,7 @@
 #app-root-2026-annual_report .ar-cov-video video {
   width: 100%;
   aspect-ratio: 16 / 9;
+  max-height: 86vh;
   object-fit: cover;
   display: block;
   background: #c5dfef;

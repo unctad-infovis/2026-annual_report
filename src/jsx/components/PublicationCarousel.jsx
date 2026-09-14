@@ -25,17 +25,9 @@ export default function PublicationCarousel({ title, previousLabel, nextLabel, c
 
   useEffect(() => {
     const strip = stripRef.current;
-    // Browsers redirect vertical wheel input into an x-only scroll container's
-    // scrollLeft since it has nowhere else to send it. Reclaim vertical wheel
-    // gestures for the page and leave horizontal ones (trackpad, shift+wheel)
-    // to the strip's native scrolling. React's onWheel is passive and can't
-    // preventDefault, so this listener is attached manually.
     const handleWheel = event => {
       if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
         event.preventDefault();
-        // behavior must be explicit: the page sets `scroll-behavior: smooth`
-        // on <html>, so an unspecified/'auto' behavior here would animate
-        // every wheel tick and make scrolling feel laggy or stuck.
         window.scrollBy({ top: event.deltaY, left: 0, behavior: 'instant' });
       }
     };
